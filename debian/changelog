@@ -5,6 +5,7 @@ apr-util1.0 (1.2.2-3) UNRELEASED; urgency=low
   * Use libdb4.3, not 4.2
   * Conflict with old package names
   * Add gdbm support
+  * Fix call to configure to avoid double linking to sqlite and sqlite3
 
  -- Tollef Fog Heen <tfheen@debian.org>  Thu, 26 Jan 2006 12:44:53 +0100
 

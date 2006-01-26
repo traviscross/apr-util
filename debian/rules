@@ -37,7 +37,7 @@ SHELL=/bin/bash
 
 config.status: configure
 	dh_testdir
-	CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" $(CONFFLAGS) ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --enable-layout=Debian --includedir=\$${prefix}/usr/include/apr-1.0 --with-apr=/usr/bin/apr-1-config --with-ldap=yes --with-ldap-include=/usr/include --with-ldap-lib=/usr/lib --with-dbm=db42 --with-sqlite3 --with-pgsql=/usr
+	CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" $(CONFFLAGS) ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --enable-layout=Debian --includedir=\$${prefix}/usr/include/apr-1.0 --with-apr=/usr/bin/apr-1-config --with-ldap=yes --with-ldap-include=/usr/include --with-ldap-lib=/usr/lib --with-dbm=db43 --with-sqlite3 --with-pgsql=/usr
 
 build: patch-stamp build-stamp
 

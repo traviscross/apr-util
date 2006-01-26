@@ -9,6 +9,7 @@ Standards-Version: 3.6.1.0
 Package: libaprutil1
 Architecture: any
 Depends: ${shlibs:Depends}
+Conflicts: libaprutil1.0
 Description: The Apache Portable Runtime Utility Library
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
@@ -20,6 +21,7 @@ Description: The Apache Portable Runtime Utility Library
 Package: libaprutil1-dev
 Architecture: any
 Depends: libaprutil1 (= ${Source-Version}), libldap2-dev, libexpat1-dev, libdb4.2-dev, libpcre3-dev, libapr1-dev (>= 1.2.2-1), libsqlite3-dev, libpq-dev
+Conflicts: libaprutil1.0-dev
 Description: The Apache Portable Runtime Utility Library - Development Headers
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
@@ -33,6 +35,7 @@ Description: The Apache Portable Runtime Utility Library - Development Headers
 Package: libaprutil1-dbg
 Architecture: any
 Depends: libaprutil1 (= ${Source-Version})
+Conflicts: libaprutil1.0-dev
 Description: The Apache Portable Runtime Utility Library - Development Headers
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 

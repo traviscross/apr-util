@@ -67,7 +67,7 @@ test: test-stamp
 
 test-stamp: build
 	dh_testdir
-	$(MAKE) check LIBTOOL=$(LIBTOOL)
+	$(MAKE) check LIBTOOL=$(LIBTOOL) CC=$(CC)
 
 	touch $@
 

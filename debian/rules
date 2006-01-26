@@ -81,7 +81,7 @@ binary-arch: build install
 	dh_installdocs
 	dh_install -a
 	dh_link
-	dh_strip --dbg-package=libaprutil1.0-dbg
+	dh_strip --dbg-package=libaprutil1-dbg
 	dh_compress
 	dh_fixperms
 	dh_makeshlibs

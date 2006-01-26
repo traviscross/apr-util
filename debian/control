@@ -1,0 +1,44 @@
+Source: apr-util1.0
+Section: libs
+Priority: optional
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Uploaders: Tollef Fog Heen <tfheen@debian.org>, Thom May <thom@debian.org>, Fabio M. Di Nitto <fabbione@fabbione.net>, Daniel Stone <daniels@debian.org>, Adam Conrad <adconrad@0c3.net>
+Build-Depends: debhelper (>> 5.0.0), autoconf, autotools-dev, libtool, mawk, libldap2-dev, libexpat1-dev, libdb4.2-dev, libpcre3-dev, dpatch (>= 1.11), binutils (>= 2.14.90.0.7), libapr1.0-dev (>= 1.2.2-1), libsqlite3-dev, libpq-dev
+Standards-Version: 3.6.1.0
+
+Package: libaprutil1.0
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: The Apache Portable Runtime Utility Library
+ APR is Apache's Portable Runtime Library, designed to be a support library 
+ that provides a predictable and consistent interface to underlying 
+ platform-specific implementations. 
+ .
+ APR Util is a utilities library implemented on top of apr, providing database
+ access, xml parsing, and other useful functionality.
+
+Package: libaprutil1.0-dev
+Architecture: any
+Depends: libaprutil1.0 (= ${Source-Version})
+Description: The Apache Portable Runtime Utility Library - Development Headers
+ APR is Apache's Portable Runtime Library, designed to be a support library 
+ that provides a predictable and consistent interface to underlying 
+ platform-specific implementations. 
+ .
+ APR Util is a utilities library implemented on top of apr, providing database
+ access, xml parsing, and other useful functionality.
+ .
+ This package contains development headers for APR util.
+
+Package: libaprutil1.0-dbg
+Architecture: any
+Depends: libaprutil1.0 (= ${Source-Version})
+Description: The Apache Portable Runtime Utility Library - Development Headers
+ APR is Apache's Portable Runtime Library, designed to be a support library 
+ that provides a predictable and consistent interface to underlying 
+ platform-specific implementations. 
+ .
+ APR Util is a utilities library implemented on top of apr, providing database
+ access, xml parsing, and other useful functionality.
+ .
+ This package contains the debugging symbols for APR util.

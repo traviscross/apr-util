@@ -1,0 +1,66 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 04_version_symbols.dpatch by  <thom@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad apr-util1.0-1.2.2~/Makefile.in apr-util1.0-1.2.2/Makefile.in
+--- apr-util1.0-1.2.2~/Makefile.in	2005-05-24 14:09:35.000000000 +0200
++++ apr-util1.0-1.2.2/Makefile.in	2005-10-30 16:18:03.000000000 +0100
+@@ -21,6 +21,7 @@
+ APU_CONFIG = apu-$(APRUTIL_MAJOR_VERSION)-config
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
++VERSIONFLAG = @VERSIONFLAG@
+ 
+ TARGETS = $(TARGET_LIB) aprutil.exp
+ 
+diff -urNad apr-util1.0-1.2.2~/apu_version_script apr-util1.0-1.2.2/apu_version_script
+--- apr-util1.0-1.2.2~/apu_version_script	1970-01-01 01:00:00.000000000 +0100
++++ apr-util1.0-1.2.2/apu_version_script	2005-10-30 16:18:03.000000000 +0100
+@@ -0,0 +1,4 @@
++APU_1.1 {
++        global:
++                apr_*;
++};
+diff -urNad apr-util1.0-1.2.2~/configure apr-util1.0-1.2.2/configure
+--- apr-util1.0-1.2.2~/configure	2005-09-27 01:28:49.000000000 +0200
++++ apr-util1.0-1.2.2/configure	2005-10-30 16:18:03.000000000 +0100
+@@ -50178,6 +50178,28 @@
+ 
+ DEFS=-DHAVE_CONFIG_H
+ 
++  VERSIONFLAG="-Wl,--version-script=apu_version_script"
++  if test "x$LDFLAGS" = "x"; then
++    test "x$silent" != "xyes" && echo "  setting LDFLAGS to \"-Wl,--version-script=apr_version_script\""
++    LDFLAGS='$(VERSIONFLAG)'
++  else
++    apr_addto_bugger='$(VERSIONFLAG)'
++    for i in $apr_addto_bugger; do
++      apr_addto_duplicate="0"
++      for j in $LDFLAGS; do
++        if test "x$i" = "x$j"; then
++          apr_addto_duplicate="1"
++          break
++        fi
++      done
++      if test $apr_addto_duplicate = "0"; then
++        test "x$silent" != "xyes" && echo "  adding \"$i\" to LDFLAGS"
++        LDFLAGS="$LDFLAGS $i"
++      fi
++    done
++  fi
++
++
+ ac_libobjs=
+ ac_ltlibobjs=
+ for ac_i in : $LIBOBJS; do test "x$ac_i" = x: && continue
+@@ -50819,6 +50841,7 @@
+ s,@INCLUDE_OUTPUTS@,$INCLUDE_OUTPUTS,;t t
+ s,@LIBOBJS@,$LIBOBJS,;t t
+ s,@LTLIBOBJS@,$LTLIBOBJS,;t t
++s,@VERSIONFLAG@,$VERSIONFLAG,;t t
+ CEOF
+ 
+ _ACEOF

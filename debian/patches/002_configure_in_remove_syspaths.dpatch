@@ -13,8 +13,8 @@ diff -urNad apr-util1.0-1.2.2~/configure.in apr-util1.0-1.2.2/configure.in
  dnl
  APR_ADDTO(APRUTIL_LIBS, [$APR_LIBS])
  
-+APR_REMOVEFROM(APRUTIL_LIBS, [/usr/lib])
-+APR_REMOVEFROM(APRUTIL_INCLUDE, [/usr/include])
++APR_REMOVEFROM(APRUTIL_LDFLAGS, [-L/usr/lib])
++APR_REMOVEFROM(APRUTIL_INCLUDE, [-I/usr/include])
 +
  AC_SUBST(APRUTIL_EXPORT_LIBS)
  AC_SUBST(APRUTIL_PRIV_INCLUDES)

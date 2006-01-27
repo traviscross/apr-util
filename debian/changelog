@@ -1,6 +1,7 @@
-apr-util1.0 (1.2.2-3) UNRELEASED; urgency=low
+apr-util (1.2.2-3) UNRELEASED; urgency=low
 
   * Add proper depends to libaprutil1-dev
+  * Rename source package to match upstream.
   * Rename to libaprutil1 instead of libaprutil1.0
   * Use libdb4.3, not 4.2
   * Conflict with old package names

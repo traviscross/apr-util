@@ -1,0 +1,24 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 003_buildconf_config.guess_sub_location.dpatch by  <tfheen@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad apr-util1.0-1.2.2~/buildconf apr-util1.0-1.2.2/buildconf
+--- apr-util1.0-1.2.2~/buildconf	2006-01-27 14:14:57.000000000 +0100
++++ apr-util1.0-1.2.2/buildconf	2006-01-27 14:16:12.000000000 +0100
+@@ -54,10 +54,10 @@
+ 
+ # Remove some files, then copy them from apr source tree
+ rm -f build/apr_common.m4 build/find_apr.m4 build/install.sh \
+-      build/config.guess build/config.sub
++    build/config.guess build/config.sub
+ cp $apr_src_dir/build/apr_common.m4 $apr_src_dir/build/find_apr.m4 \
+-   $apr_src_dir/build/install.sh $apr_src_dir/build/config.guess  \
+-   $apr_src_dir/build/config.sub build
++   $apr_src_dir/build/install.sh /usr/share/misc/config.guess  \
++   /usr/share/misc/config.sub build
+ 
+ # Remove aclocal.m4 as it'll break some builds...
+ rm -rf aclocal.m4 autom4te*.cache

@@ -44,6 +44,7 @@ LIBTOOL=$(shell apr-1-config --apr-libtool)
 
 config.status: configure
 	dh_testdir
+	./buildconf --with-apr=$(shell apr-1-config --srcdir)
 	CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" $(CONFFLAGS) ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --enable-layout=Debian --includedir=\$${prefix}/usr/include/apr-1.0 --with-apr=/usr/bin/apr-1-config --with-ldap=yes --with-dbm=db43 --with-sqlite3 --with-pgsql=/usr --with-gdbm --without-sqlite2
 
 build: patch-stamp build-stamp

@@ -8,6 +8,7 @@ apr-util (1.2.2-3) unstable; urgency=low
   * Add gdbm support
   * Fix call to configure to avoid double linking to sqlite and sqlite3
   * Update to Standards Version: 3.6.2.2: no changes.
+  * Add apu-config compatibility symlink.
 
  -- Tollef Fog Heen <tfheen@debian.org>  Fri, 27 Jan 2006 18:50:04 +0100
 

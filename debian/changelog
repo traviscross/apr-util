@@ -1,6 +1,7 @@
 apr-util (1.2.2-4) unstable; urgency=low
 
   * Compile with -fPIC.  Closes: #350677
+  * Build with -i to avoid .svn directories in source.  Closes: #357175
 
  -- Tollef Fog Heen <tfheen@debian.org>  Fri, 27 Jan 2006 18:50:04 +0100
 

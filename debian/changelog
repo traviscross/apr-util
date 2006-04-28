@@ -1,3 +1,10 @@
+apr-util (1.2.2-4) unstable; urgency=low
+
+  * Compile with -fPIC.  Closes: #350677
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Fri, 27 Jan 2006 18:50:04 +0100
+
+apr-util1.0 (1.2.2-2) unstable; urgency=low
 apr-util (1.2.2-3) unstable; urgency=low
 
   * Add proper depends to libaprutil1-dev

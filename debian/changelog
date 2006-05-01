@@ -4,6 +4,8 @@ apr-util (1.2.7-1) unstable; urgency=low
   * Tighten build dependency on apr to a version which ships
     get-version.sh
   * Grab get-version.sh from APR build
+  * Pass --with-berkeley-db to configure so it actually picks up our
+    preferred BDB version.
 
  -- Tollef Fog Heen <tfheen@debian.org>  Fri, 28 Apr 2006 21:59:55 +0200
 

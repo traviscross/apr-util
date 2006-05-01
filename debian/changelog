@@ -3,6 +3,7 @@ apr-util (1.2.7-1) unstable; urgency=low
   * New upstream release
   * Tighten build dependency on apr to a version which ships
     get-version.sh
+  * Grab get-version.sh from APR build
 
  -- Tollef Fog Heen <tfheen@debian.org>  Fri, 28 Apr 2006 21:59:55 +0200
 

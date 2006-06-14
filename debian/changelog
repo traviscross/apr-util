@@ -1,6 +1,7 @@
 apr-util (1.2.7-2) UNRELEASED; urgency=low
 
   * Fix override disparity.
+  * Compile without gdbm.
 
  -- Tollef Fog Heen <tfheen@debian.org>  Mon,  1 May 2006 17:05:28 +0200
 

@@ -40,7 +40,6 @@ endif
 CONFFLAGS += ac_cv_prog_AWK=mawk
 
 SHELL=/bin/bash
-LIBTOOL=$(shell apr-1-config --apr-libtool)
 
 config.status: configure
 	dh_testdir
@@ -52,7 +51,7 @@ build: patch-stamp build-stamp
 build-stamp: config.status
 	dh_testdir
 
-	$(MAKE) LIBTOOL=$(LIBTOOL) CC=$(CC)
+	$(MAKE)
 
 	touch $@
 
@@ -68,7 +67,7 @@ test: test-stamp
 
 test-stamp: build
 	dh_testdir
-	$(MAKE) check LIBTOOL=$(LIBTOOL) CC=$(CC)
+	$(MAKE) check
 
 	touch $@
 
@@ -78,7 +77,7 @@ install: build $(TEST_TARGET)
 	dh_clean -k
 	dh_installdirs -a
 
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp LIBTOOL=$(LIBTOOL)
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 
 binary-indep: build install
 

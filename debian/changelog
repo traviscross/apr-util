@@ -1,4 +1,4 @@
-apr-util (1.2.7-2) UNRELEASED; urgency=low
+apr-util (1.2.7-2) unstable; urgency=low
 
   * Fix override disparity.
   * Compile without gdbm.

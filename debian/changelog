@@ -2,6 +2,8 @@ apr-util (1.2.7-3) UNRELEASED; urgency=low
 
   * Remove dependency on libgdbm1 from libaprutil1-dev.
   * Build against libdb 4.4.  Closes: #354510
+  * Remove most libs from apu-config --link-ld --libs.  Thanks to Peter
+    Samuelson, Closes: #378105
 
  -- Tollef Fog Heen <tfheen@debian.org>  Fri, 14 Jul 2006 15:31:22 +0200
 

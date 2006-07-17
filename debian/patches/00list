@@ -3,3 +3,4 @@
 003_buildconf_config.guess_sub_location
 004_debian_layout_fix
 013_ship_find_apu.m4
+014_apu_config_dont_list_indep_libs

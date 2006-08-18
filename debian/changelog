@@ -4,6 +4,8 @@ apr-util (1.2.7-3) UNRELEASED; urgency=low
   * Build against libdb 4.4.  Closes: #354510
   * Remove most libs from apu-config --link-ld --libs.  Thanks to Peter
     Samuelson, Closes: #378105
+  * Use md4 and md5 implementation from Solar Designer as this is in the
+    public domain and not subject to RSA copyright.
 
  -- Tollef Fog Heen <tfheen@debian.org>  Fri, 14 Jul 2006 15:31:22 +0200
 

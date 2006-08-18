@@ -8,7 +8,7 @@
 diff -urNad apr-util-1.2.7~/crypto/apr_md4.c apr-util-1.2.7/crypto/apr_md4.c
 --- apr-util-1.2.7~/crypto/apr_md4.c	1970-01-01 01:00:00.000000000 +0100
 +++ apr-util-1.2.7/crypto/apr_md4.c	2006-08-18 14:21:41.000000000 +0200
-@@ -0,0 +1,403 @@
+@@ -0,0 +1,389 @@
 +/* Adopted for apr-util by Tollef Fog Heen <tfheen@err.no> */
 +
 +/*
@@ -169,20 +169,6 @@ diff -urNad apr-util-1.2.7~/crypto/apr_md4.c apr-util-1.2.7/crypto/apr_md4.c
 +    /* Compute number of bytes mod 64 */
 +    used = saved_lo & 0x3f;
 +
-+    if (used) {
-+        free = 64 - used;
-+        
-+        if (inputLen < free) {
-+            memcpy(&context->buffer[used], input, inputLen);
-+            return APR_SUCCESS;
-+        }
-+        
-+        memcpy(&context->buffer[used], input, free);
-+        input = input + free;
-+        inputLen -= free;
-+        body(context, context->buffer, 64);
-+    }
-+    
 +    /* Transform as many times as possible. */
 +    if (used) {
 +        free = 64 - used;
@@ -415,7 +401,7 @@ diff -urNad apr-util-1.2.7~/crypto/apr_md4.c apr-util-1.2.7/crypto/apr_md4.c
 diff -urNad apr-util-1.2.7~/crypto/apr_md5.c apr-util-1.2.7/crypto/apr_md5.c
 --- apr-util-1.2.7~/crypto/apr_md5.c	1970-01-01 01:00:00.000000000 +0100
 +++ apr-util-1.2.7/crypto/apr_md5.c	2006-08-18 14:21:41.000000000 +0200
-@@ -0,0 +1,700 @@
+@@ -0,0 +1,686 @@
 +/* FIXME: body must handle xlate */
 +
 +/*
@@ -590,20 +576,6 @@ diff -urNad apr-util-1.2.7~/crypto/apr_md5.c apr-util-1.2.7/crypto/apr_md5.c
 +    /* Compute number of bytes mod 64 */
 +    used = saved_lo & 0x3f;
 +
-+    if (used) {
-+        free = 64 - used;
-+        
-+        if (inputLen < free) {
-+            memcpy(&context->buffer[used], _input, inputLen);
-+            return APR_SUCCESS;
-+        }
-+        
-+        memcpy(&context->buffer[used], _input, free);
-+        _input = (const unsigned char *) _input + free;
-+        inputLen -= free;
-+        body(context, context->buffer, 64);
-+    }
-+    
 +    /* Transform as many times as possible. */
 +    if (used) {
 +        free = 64 - used;

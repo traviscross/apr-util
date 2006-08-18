@@ -1,5 +1,13 @@
 apr-util (1.2.7+dfsg-1) unstable; urgency=low
 
+  * Fix stupid code duplication in apr_md[45].c resulting from C&P.
+    Thanks to Peter Samuelson for notifying me.  This makes md[45] work
+    correctly.
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Fri, 18 Aug 2006 19:50:31 +0200
+
+apr-util (1.2.7+dfsg-1) unstable; urgency=low
+
   * Remove dependency on libgdbm1 from libaprutil1-dev.
   * Build against libdb 4.4.  Closes: #354510
   * Remove most libs from apu-config --link-ld --libs.  Thanks to Peter

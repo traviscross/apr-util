@@ -34,6 +34,7 @@ Description: The Apache Portable Runtime Utility Library - Development Headers
  This package contains development headers for APR util.
 
 Package: libaprutil1-dbg
+Priority: extra
 Architecture: any
 Section: libdevel
 Depends: libaprutil1 (= ${Source-Version})

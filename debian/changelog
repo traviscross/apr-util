@@ -1,3 +1,9 @@
+apr-util (1.2.7+dfsg-3) UNRELEASED; urgency=low
+
+  * Make libaprutil1-dbg Priority: extra to match overrides.
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Sat, 19 Aug 2006 15:19:38 +0200
+
 apr-util (1.2.7+dfsg-2) unstable; urgency=low
 
   * Fix stupid code duplication in apr_md[45].c resulting from C&P.

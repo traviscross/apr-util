@@ -3,8 +3,8 @@ Section: libs
 Priority: optional
 Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
 Uploaders: Tollef Fog Heen <tfheen@debian.org>, Thom May <thom@debian.org>, Fabio M. Di Nitto <fabbione@fabbione.net>, Daniel Stone <daniels@debian.org>, Adam Conrad <adconrad@0c3.net>
-Build-Depends: debhelper (>> 5.0.0), autoconf, autotools-dev, mawk, libldap2-dev, libexpat1-dev, libdb4.4-dev, libpcre3-dev, dpatch (>= 1.11), binutils (>= 2.14.90.0.7), libapr1-dev (>= 1.2.7-3), libsqlite3-dev, libpq-dev, python
-Standards-Version: 3.6.2.2
+Build-Depends: debhelper (>> 5.0.0), autoconf, autotools-dev, mawk, libldap2-dev, libexpat1-dev, libdb4.4-dev, libpcre3-dev, dpatch (>= 1.11), binutils (>= 2.14.90.0.7), libapr1-dev (>= 1.2.7-3), libsqlite3-dev, libpq-dev, libmysqlclient15-dev, python
+Standards-Version: 3.7.2.2
 
 Package: libaprutil1
 Architecture: any

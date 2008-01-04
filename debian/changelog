@@ -6,6 +6,7 @@ apr-util (1.2.7+dfsg-3) UNRELEASED; urgency=low
   [ Peter Samuelson ]
   * Add apr_dbd_mysql.c from WebThing.com, svn r82. (Closes: #395959, #405773)
   * Policy 3.7.2.2 (no changes).
+  * Compile with db 4.6.  (Closes: #422465)
   * Add watch file.
 
  -- Tollef Fog Heen <tfheen@debian.org>  Sat, 19 Aug 2006 15:19:38 +0200

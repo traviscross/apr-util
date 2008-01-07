@@ -60,6 +60,7 @@ clean: unpatch
 	dh_testroot
 	rm -f build-stamp test-stamp
 	-$(MAKE) distclean
+	rm -f test/data/test-db test/data/test-sdbm.dir test/data/test-sdbm.pag
 
 	dh_clean
 

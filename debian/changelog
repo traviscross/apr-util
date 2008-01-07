@@ -1,7 +1,9 @@
 apr-util (1.2.12+dfsg-1) UNRELEASED; urgency=low
 
   [ Stefan Fritsch ]
-  * New upstream version
+  * New upstream version (Closes: #447146)
+  * Fix debian/rules clean
+  * Don't ship .svn directories. (Closes: #431508)
 
   [ Tollef Fog Heen ]
   * Make libaprutil1-dbg Priority: extra to match overrides.
@@ -11,7 +13,7 @@ apr-util (1.2.12+dfsg-1) UNRELEASED; urgency=low
   * Compile with db 4.6.  (Closes: #422465, #429025)
   * Add watch file.
 
- -- Tollef Fog Heen <tfheen@debian.org>  Sat, 19 Aug 2006 15:19:38 +0200
+ -- Stefan Fritsch <sf@debian.org>  Mon, 07 Jan 2008 23:08:07 +0100
 
 apr-util (1.2.7+dfsg-2) unstable; urgency=low
 

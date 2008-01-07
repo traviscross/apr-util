@@ -1,10 +1,14 @@
-apr-util (1.2.7+dfsg-3) UNRELEASED; urgency=low
+apr-util (1.2.12+dfsg-1) UNRELEASED; urgency=low
 
+  [ Stefan Fritsch ]
+  * New upstream version
+
+  [ Tollef Fog Heen ]
   * Make libaprutil1-dbg Priority: extra to match overrides.
 
   [ Peter Samuelson ]
   * Policy 3.7.2.2 (no changes).
-  * Compile with db 4.6.  (Closes: #422465)
+  * Compile with db 4.6.  (Closes: #422465, #429025)
   * Add watch file.
 
  -- Tollef Fog Heen <tfheen@debian.org>  Sat, 19 Aug 2006 15:19:38 +0200

@@ -10,6 +10,7 @@ apr-util (1.2.12+dfsg-1) UNRELEASED; urgency=low
     - Remove empty /usr/share/doc/libapr1.0/.
     - Don't ignore make clean errors.
   * Add myself to Uploaders.
+  * Add Vcs info.
 
   [ Tollef Fog Heen ]
   * Make libaprutil1-dbg Priority: extra to match overrides.

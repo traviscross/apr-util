@@ -4,12 +4,17 @@ apr-util (1.2.12+dfsg-1) UNRELEASED; urgency=low
   * New upstream version (Closes: #447146)
   * Fix debian/rules clean
   * Don't ship .svn directories. (Closes: #431508)
+  * Fix some lintian warnings:
+    - Use ${binary:Version} instead of ${Source-Version}.
+    - Bump standards-version to 3.7.3 (no changes).
+    - Remove empty /usr/share/doc/libapr1.0/.
+    - Don't ignore make clean errors.
+  * Add myself to Uploaders.
 
   [ Tollef Fog Heen ]
   * Make libaprutil1-dbg Priority: extra to match overrides.
 
   [ Peter Samuelson ]
-  * Policy 3.7.2.2 (no changes).
   * Compile with db 4.6.  (Closes: #422465, #429025)
   * Add watch file.
 

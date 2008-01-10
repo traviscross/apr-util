@@ -12,7 +12,7 @@ include /usr/share/dpatch/dpatch.make
 DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
-CFLAGS := $(CFLAGS) -pipe -Wall -g -fPIC
+CFLAGS := $(CFLAGS) -pipe -Wall -g -pthread
 
 # Enable debug builds
 ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
@@ -44,14 +44,17 @@ SHELL=/bin/bash
 config.status: configure
 	dh_testdir
 	./buildconf --with-apr=$(shell apr-1-config --srcdir)
-	CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" $(CONFFLAGS) ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --enable-layout=Debian --with-apr=/usr/bin/apr-1-config --with-ldap=yes --with-dbm=db46 --with-sqlite3 --with-pgsql=/usr --without-gdbm --without-sqlite2 --with-berkeley-db
+	$(CONFFLAGS) ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --enable-layout=Debian --with-apr=/usr/bin/apr-1-config --with-ldap=yes --with-dbm=db46 --with-sqlite3 --with-pgsql=/usr --without-gdbm --without-sqlite2 --with-berkeley-db
 
 build: patch-stamp build-stamp
 
 build-stamp: config.status
 	dh_testdir
 
-	$(MAKE)
+	# LDFLAGS=-Wl,--as-needed does not work since it affects only libraries
+	# given _after_ it on the command line, but apr's libtool puts the 
+	# "-l..." _before_ the "-Wl,--as-needed"
+	$(MAKE) CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" EXTRA_CFLAGS=""
 
 	touch $@
 

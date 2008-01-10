@@ -11,6 +11,8 @@ apr-util (1.2.12+dfsg-1) UNRELEASED; urgency=low
     - Don't ignore make clean errors.
   * Add myself to Uploaders.
   * Add Vcs info and homepage to debian/control.
+  * Change handling of CFLAGS in debian/rules so that they are actually used.
+    Fixes DEB_BUILD_OPTIONS=debug.
 
   [ Tollef Fog Heen ]
   * Make libaprutil1-dbg Priority: extra to match overrides.

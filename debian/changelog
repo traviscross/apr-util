@@ -1,3 +1,10 @@
+apr-util (1.2.12+dfsg-3) UNRELEASED; urgency=low
+
+  * Point VCS tags in debian control to trunk, to make them useful with
+    debcheckout.
+
+ -- Stefan Fritsch <sf@debian.org>  Sun, 24 Feb 2008 22:33:27 +0100
+
 apr-util (1.2.12+dfsg-2) unstable; urgency=low
 
   * Build-Depend on libdb4.6-dev instead of libdb-dev >= 4.6, as the latter

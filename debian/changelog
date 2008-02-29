@@ -1,9 +1,12 @@
-apr-util (1.2.12+dfsg-3) UNRELEASED; urgency=low
+apr-util (1.2.12+dfsg-3) unstable; urgency=medium
 
+  * Fix integer overflow in apr_brigade_partition on 32bit systems.  Urgency
+    medium because this made apache segfault when resuming a file larger than
+    4GB.
   * Point VCS tags in debian control to trunk, to make them useful with
     debcheckout.
 
- -- Stefan Fritsch <sf@debian.org>  Sun, 24 Feb 2008 22:33:27 +0100
+ -- Stefan Fritsch <sf@debian.org>  Fri, 29 Feb 2008 20:59:49 +0100
 
 apr-util (1.2.12+dfsg-2) unstable; urgency=low
 

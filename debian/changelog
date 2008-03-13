@@ -1,3 +1,10 @@
+apr-util (1.2.12+dfsg-4) UNRELEASED; urgency=low
+
+  * Remove Thom May, Fabio M. Di Nitto, Daniel Stone, and Adam Conrad from the
+    uploaders field (thanks for your work).
+
+ -- Stefan Fritsch <sf@debian.org>  Thu, 13 Mar 2008 18:31:01 +0100
+
 apr-util (1.2.12+dfsg-3) unstable; urgency=medium
 
   * Fix integer overflow in apr_brigade_partition on 32bit systems.  Urgency

@@ -1,9 +1,12 @@
 apr-util (1.2.12+dfsg-4) UNRELEASED; urgency=low
 
+  * Activate mysql support (closes: #395959). This is made possible by php5
+    now linking against the threadsafe version of libmysqlclient. Therefore
+    add a conflict with older versions of php5-mysql and with php4-mysql.
   * Rebuild against apr with hardening options: CFLAGS are taken from apr, set
     LDFLAGS=-Wl,-z,relro explicitly.
-  * Conflict with apache2 << 2.2.8-1, which used an older version of libldap and
-    now segfaults with current libaprutil1+libldap.
+  * Conflict with apache2 << 2.2.8-1, which used an older version of libldap
+    and now segfaults with current libaprutil1+libldap.
   * Remove Thom May, Fabio M. Di Nitto, Daniel Stone, and Adam Conrad from the
     uploaders field (thanks for your work).
 

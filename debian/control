@@ -3,7 +3,7 @@ Section: libs
 Priority: optional
 Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
 Uploaders: Tollef Fog Heen <tfheen@debian.org>, Stefan Fritsch <sf@debian.org>
-Build-Depends: debhelper (>> 5.0.0), autoconf, autotools-dev, mawk, libldap2-dev, libexpat1-dev, libdb4.6-dev, libpcre3-dev, dpatch (>= 1.11), binutils (>= 2.14.90.0.7), libapr1-dev (>= 1.2.7-3), libsqlite3-dev, libpq-dev, python
+Build-Depends: debhelper (>> 5.0.0), autoconf, autotools-dev, mawk, libldap2-dev, libexpat1-dev, libdb4.6-dev, libpcre3-dev, dpatch (>= 1.11), binutils (>= 2.14.90.0.7), libapr1-dev (>= 1.2.7-3), libsqlite3-dev, libpq-dev, python, libmysqlclient-dev
 Standards-Version: 3.7.3.0
 XS-Vcs-Browser: http://svn.debian.org/wsvn/pkg-apache/trunk/apr-util
 XS-Vcs-svn: svn://svn.debian.org/pkg-apache/trunk/apr-util
@@ -12,7 +12,7 @@ Homepage: http://apr.apache.org/
 Package: libaprutil1
 Architecture: any
 Depends: ${shlibs:Depends}
-Conflicts: libaprutil1.0, apache2.2-common (<< 2.2.8-1~)
+Conflicts: libaprutil1.0, apache2.2-common (<< 2.2.8-1~), php5-mysql (<< 5.2.6-1~), php4-mysql (<< 6:4.4.4-10)
 Description: The Apache Portable Runtime Utility Library
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 

@@ -1,4 +1,4 @@
-apr-util (1.2.12+dfsg-4) UNRELEASED; urgency=low
+apr-util (1.2.12+dfsg-4) unstable; urgency=low
 
   * Activate mysql support (closes: #395959). This is made possible by php5
     now linking against the threadsafe version of libmysqlclient. Therefore
@@ -10,7 +10,7 @@ apr-util (1.2.12+dfsg-4) UNRELEASED; urgency=low
   * Remove Thom May, Fabio M. Di Nitto, Daniel Stone, and Adam Conrad from the
     uploaders field (thanks for your work).
 
- -- Stefan Fritsch <sf@debian.org>  Mon, 14 Apr 2008 21:03:57 +0200
+ -- Stefan Fritsch <sf@debian.org>  Sun, 18 May 2008 17:13:24 +0200
 
 apr-util (1.2.12+dfsg-3) unstable; urgency=medium
 

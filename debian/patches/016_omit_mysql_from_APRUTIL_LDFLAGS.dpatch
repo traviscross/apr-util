@@ -1,0 +1,35 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 016_omit_mysql_from_APRUTIL_LDFLAGS.dpatch by Stefan Fritsch <sf@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Don't make applications link to mysql, it is enough if libaprutil does that
+## DP: See #482270
+## DP: This seems to be fixed in 1.3.x already
+
+@DPATCH@
+diff -urNad trunk~/build/dbd.m4 trunk/build/dbd.m4
+--- trunk~/build/dbd.m4	2007-11-01 15:07:19.000000000 +0100
++++ trunk/build/dbd.m4	2008-05-25 23:05:43.765295411 +0200
+@@ -101,7 +101,6 @@
+       else
+         if test "x$MYSQL_CONFIG" != 'x'; then
+           APR_ADDTO(APRUTIL_INCLUDES, [$mysql_CPPFLAGS])
+-          APR_ADDTO(APRUTIL_LDFLAGS, [$mysql_LDFLAGS])
+         fi
+       fi
+ 
+@@ -129,14 +128,12 @@
+       AC_CHECK_HEADERS(mysql.h, AC_CHECK_LIB(mysqlclient_r, mysql_init, [apu_have_mysql=1]))
+       if test "$apu_have_mysql" != "0"; then
+         APR_ADDTO(APRUTIL_INCLUDES, [$mysql_CPPFLAGS])
+-        APR_ADDTO(APRUTIL_LDFLAGS, [$mysql_LDFLAGS])
+       fi
+ 
+       if test "$apu_have_mysql" != "1"; then
+         AC_CHECK_HEADERS(mysql/mysql.h, AC_CHECK_LIB(mysqlclient_r, mysql_init, [apu_have_mysql=1]))
+         if test "$apu_have_mysql" != "0"; then
+           APR_ADDTO(APRUTIL_INCLUDES, [-I$withval/include/mysql])
+-          APR_ADDTO(APRUTIL_LDFLAGS, [-L$withval/lib])
+         fi
+       fi
+ 

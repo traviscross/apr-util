@@ -1,3 +1,11 @@
+apr-util (1.2.12+dfsg-5) unstable; urgency=low
+
+  * Don't output "-lmysqlclient_r" in "apu-config --ldflags". It is enough if
+    libaprutil links to mysql, applications don't need to do it, too.
+    (Closes: #482270)
+
+ -- Stefan Fritsch <sf@debian.org>  Sun, 25 May 2008 22:53:36 +0200
+
 apr-util (1.2.12+dfsg-4) unstable; urgency=low
 
   * Activate mysql support (closes: #395959). This is made possible by php5

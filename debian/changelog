@@ -1,3 +1,10 @@
+apr-util (1.2.12+dfsg-6) unstable; urgency=low
+
+  * Make libaprutil1-dev depend on libmysqlclient15-dev. Libtool needs it for
+    linking (really closes: #482270).
+
+ -- Stefan Fritsch <sf@debian.org>  Mon, 26 May 2008 23:45:44 +0200
+
 apr-util (1.2.12+dfsg-5) unstable; urgency=low
 
   * Don't output "-lmysqlclient_r" in "apu-config --ldflags". It is enough if

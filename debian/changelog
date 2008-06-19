@@ -1,3 +1,9 @@
+apr-util (1.2.12+dfsg-7) UNRELEASED; urgency=low
+
+  * Apply all hardening build options independently from apr.
+
+ -- Stefan Fritsch <sf@debian.org>  Thu, 19 Jun 2008 20:40:53 +0200
+
 apr-util (1.2.12+dfsg-6) unstable; urgency=low
 
   * Make libaprutil1-dev depend on libmysqlclient15-dev. Libtool needs it for

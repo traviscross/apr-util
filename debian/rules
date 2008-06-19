@@ -14,7 +14,15 @@ DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
 # get cflags frpm apr-config but remove -O2
 CFLAGS := $(CFLAGS) $(shell apr-1-config --cflags |perl -p -e 's!-O.( |$$)!!')
-LDFLAGS := $(LDFLAGS) $(shell apr-1-config --ldflags) -Wl,-z,relro
+LDFLAGS := $(LDFLAGS) $(shell apr-1-config --ldflags)
+
+# hardening options
+H_CFLAGS := -Wformat -Wformat-security -D_FORTIFY_SOURCE=2
+H_LDFLAGS := -Wl,-z,relro
+# do not enable -fstack-protector on arm and armel, see #477772, #469517
+ifeq (,$(findstring arm,$(DEB_HOST_GNU_TYPE)))
+        H_CFLAGS += -fstack-protector
+endif
 
 # Enable debug builds
 ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
@@ -56,7 +64,7 @@ build-stamp: config.status
 	# LDFLAGS=-Wl,--as-needed does not work since it affects only libraries
 	# given _after_ it on the command line, but apr's libtool puts the 
 	# "-l..." _before_ the "-Wl,--as-needed"
-	$(MAKE) CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" EXTRA_CFLAGS=""
+	$(MAKE) CFLAGS="$(CFLAGS) $(H_CFLAGS)" LDFLAGS="$(LDFLAGS) $(H_LDFLAGS)" EXTRA_CFLAGS=""
 
 	touch $@
 

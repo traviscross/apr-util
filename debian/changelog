@@ -1,7 +1,7 @@
 apr-util (1.2.12+dfsg-8) UNRELEASED; urgency=low
 
   * Upgraded to policy version 3.8.0
-    - Referece the copyright in common-licenses enstead of including it
+    - Reference the copyright in common-licenses instead of including it
     - support for noopt in DEB_BUILD_OPTIONS
     - Added a REAME.source
   * Dropped the XS- prefix for the Vcs fields in debian/control

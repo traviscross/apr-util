@@ -1,3 +1,14 @@
+apr-util (1.2.12+dfsg-8) UNRELEASED; urgency=low
+
+  * Upgraded to policy version 3.8.0
+    - Referece the copyright in common-licenses enstead of including it
+    - support for noopt in DEB_BUILD_OPTIONS
+    - Added a REAME.source
+  * Dropped the XS- prefix for the Vcs fields in debian/control
+  * Made the watch file notice 1.3.x
+
+ -- Ryan Niebur <RyanRyan52@gmail.com>  Thu, 26 Jun 2008 17:55:29 -0700
+
 apr-util (1.2.12+dfsg-7) unstable; urgency=medium
 
   * Apply hardening build options independently from apr.

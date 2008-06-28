@@ -4,6 +4,4 @@
 004_debian_layout_fix
 013_ship_find_apu.m4
 014_apu_config_dont_list_indep_libs
-015_apr_brigade_partition_int_overflow.dpatch
-016_omit_mysql_from_APRUTIL_LDFLAGS.dpatch
 099_alternate_md4_md5_impl

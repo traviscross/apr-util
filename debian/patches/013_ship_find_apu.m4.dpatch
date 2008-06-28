@@ -5,10 +5,10 @@
 ## DP: No description.
 
 @DPATCH@
-diff -urNad apr-util1.0-1.2.2~/Makefile.in apr-util1.0-1.2.2/Makefile.in
---- apr-util1.0-1.2.2~/Makefile.in	2005-05-24 14:09:35.000000000 +0200
-+++ apr-util1.0-1.2.2/Makefile.in	2006-01-27 17:18:08.000000000 +0100
-@@ -67,6 +67,13 @@
+diff -urNad apr-util~/Makefile.in apr-util/Makefile.in
+--- apr-util~/Makefile.in	2008-06-27 14:56:17.000000000 -0700
++++ apr-util/Makefile.in	2008-06-27 15:33:50.000000000 -0700
+@@ -84,6 +84,12 @@
  	$(INSTALL_DATA) aprutil.exp $(DESTDIR)$(libdir)
  	$(INSTALL) -m 755 apu-config.out $(DESTDIR)$(bindir)/$(APU_CONFIG)
  
@@ -16,9 +16,8 @@ diff -urNad apr-util1.0-1.2.2~/Makefile.in apr-util1.0-1.2.2/Makefile.in
 +		@APR_SOURCE_DIR@/build/mkdir.sh $(DESTDIR)$(installbuilddir); \
 +	fi
 +	$(LIBTOOL) --mode=install cp $(top_srcdir)/build/find_apu.m4 \
-+	  $(DESTDIR)$(installbuilddir)/find_apu.m4
++		$(DESTDIR)$(installbuilddir)/find_apu.m4
 +
-+
- $(TARGET_LIB): $(OBJECTS)
- 	$(LINK) @lib_target@ $(ALL_LIBS) $(APRUTIL_LDFLAGS) $(APRUTIL_LIBS)
+ $(TARGET_LIB): $(OBJECTS) $(EXTRA_OBJECTS)
+ 	$(LINK) @lib_target@ $(EXTRA_OBJECTS) $(ALL_LIBS) $(APRUTIL_LDFLAGS) $(APRUTIL_LIBS)
  

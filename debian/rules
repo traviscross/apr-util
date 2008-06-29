@@ -35,6 +35,11 @@ else
   endif
 endif
 
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+  NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+  MAKEFLAGS += -j$(NUMJOBS)
+endif
+
 ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
 	INSTALL_PROGRAM += -s
 endif
@@ -68,7 +73,7 @@ build-stamp: config.status
 	# LDFLAGS=-Wl,--as-needed does not work since it affects only libraries
 	# given _after_ it on the command line, but apr's libtool puts the 
 	# "-l..." _before_ the "-Wl,--as-needed"
-	$(MAKE) CFLAGS="$(CFLAGS) $(H_CFLAGS)" LDFLAGS="$(LDFLAGS) $(H_LDFLAGS)" EXTRA_CFLAGS=""
+	$(MAKE) $(MAKEFLAGS) CFLAGS="$(CFLAGS) $(H_CFLAGS)" LDFLAGS="$(LDFLAGS) $(H_LDFLAGS)" EXTRA_CFLAGS=""
 
 	touch $@
 
@@ -76,7 +81,7 @@ clean: unpatch
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp test-stamp
-	[ ! -f Makefile ] || $(MAKE) distclean
+	[ ! -f Makefile ] || $(MAKE) $(MAKEFLAGS) distclean
 	rm -f test/data/test-db test/data/test-sdbm.dir test/data/test-sdbm.pag
 
 	dh_clean
@@ -85,7 +90,7 @@ test: test-stamp
 
 test-stamp: build
 	dh_testdir
-	$(MAKE) check
+	$(MAKE) $(MAKEFLAGS) check
 
 	touch $@
 
@@ -95,7 +100,7 @@ install: build $(TEST_TARGET)
 	dh_clean -k
 	dh_installdirs -a
 
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
+	$(MAKE) $(MAKEFLAGS) install DESTDIR=$(CURDIR)/debian/tmp
 
 binary-indep: build install
 

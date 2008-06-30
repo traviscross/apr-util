@@ -60,7 +60,7 @@ CONFFLAGS += ac_cv_prog_AWK=mawk
 
 SHELL=/bin/bash
 
-config.status: configure
+config.status: configure patch-stamp
 	dh_testdir
 	./buildconf --with-apr=$(shell apr-1-config --srcdir)
 	$(CONFFLAGS) ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --enable-layout=Debian --with-apr=/usr/bin/apr-1-config --with-ldap=yes --with-dbm=db46 --with-sqlite3 --with-pgsql=/usr --without-gdbm --without-sqlite2 --with-berkeley-db --with-mysql=/usr
@@ -73,7 +73,7 @@ build-stamp: config.status
 	# LDFLAGS=-Wl,--as-needed does not work since it affects only libraries
 	# given _after_ it on the command line, but apr's libtool puts the 
 	# "-l..." _before_ the "-Wl,--as-needed"
-	$(MAKE) $(MAKEFLAGS) CFLAGS="$(CFLAGS) $(H_CFLAGS)" LDFLAGS="$(LDFLAGS) $(H_LDFLAGS)" EXTRA_CFLAGS=""
+	$(MAKE) CFLAGS="$(CFLAGS) $(H_CFLAGS)" LDFLAGS="$(LDFLAGS) $(H_LDFLAGS)" EXTRA_CFLAGS=""
 
 	touch $@
 
@@ -81,7 +81,7 @@ clean: unpatch
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp test-stamp
-	[ ! -f Makefile ] || $(MAKE) $(MAKEFLAGS) distclean
+	[ ! -f Makefile ] || $(MAKE) distclean
 	rm -f test/data/test-db test/data/test-sdbm.dir test/data/test-sdbm.pag
 
 	dh_clean
@@ -90,7 +90,7 @@ test: test-stamp
 
 test-stamp: build
 	dh_testdir
-	$(MAKE) $(MAKEFLAGS) check
+	$(MAKE) check
 
 	touch $@
 
@@ -100,7 +100,7 @@ install: build $(TEST_TARGET)
 	dh_clean -k
 	dh_installdirs -a
 
-	$(MAKE) $(MAKEFLAGS) install DESTDIR=$(CURDIR)/debian/tmp
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 
 binary-indep: build install
 

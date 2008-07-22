@@ -2,10 +2,11 @@ apr-util (1.3.2+dfsg-1) UNRELEASED; urgency=low
 
   * new upstream release
   * added a note to README.source about repackaging upstream tarballs
-  * more build deps. (So that the pgsql dbd will be built)
   * put the mysql, sqlite3, pgsql, and ldap drivers into their own package.
+  * use symbol files
+  * fixed watch file
 
- -- Ryan Niebur <RyanRyan52@gmail.com>  Tue, 01 Jul 2008 18:24:53 -0700
+ -- Ryan Niebur <RyanRyan52@gmail.com>  Mon, 07 Jul 2008 18:54:35 -0700
 
 apr-util (1.2.12+dfsg-8) unstable; urgency=low
 

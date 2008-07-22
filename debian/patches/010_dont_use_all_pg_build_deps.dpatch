@@ -1,0 +1,37 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 010_dont_use_all_pg_build_deps.dpatch by Ryan Niebur <RyanRyan52@gmail.com>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad apr-util~/build/dbd.m4 apr-util/build/dbd.m4
+--- apr-util~/build/dbd.m4	2008-06-13 02:27:19.000000000 -0700
++++ apr-util/build/dbd.m4	2008-07-07 18:56:03.000000000 -0700
+@@ -35,7 +35,7 @@
+       if test "x$PGSQL_CONFIG" != 'x'; then
+         pgsql_CPPFLAGS="-I`$PGSQL_CONFIG --includedir`"
+         pgsql_LDFLAGS="-L`$PGSQL_CONFIG --libdir`"
+-        pgsql_LIBS="`$PGSQL_CONFIG --libs`"
++        pgsql_LIBS="-lpq"
+ 
+         APR_ADDTO(CPPFLAGS, [$pgsql_CPPFLAGS])
+         APR_ADDTO(LDFLAGS, [$pgsql_LDFLAGS])
+@@ -56,7 +56,7 @@
+       if test "x$PGSQL_CONFIG" != 'x'; then
+         pgsql_CPPFLAGS="-I`$PGSQL_CONFIG --includedir`"
+         pgsql_LDFLAGS="-L`$PGSQL_CONFIG --libdir`"
+-        pgsql_LIBS="`$PGSQL_CONFIG --libs`"
++        pgsql_LIBS="-lpq"
+       else
+         pgsql_CPPFLAGS="-I$withval/include"
+         pgsql_LDFLAGS="-L$withval/lib "
+@@ -80,7 +80,7 @@
+     if test "x$PGSQL_CONFIG" != 'x'; then
+       pgsql_CPPFLAGS="-I`$PGSQL_CONFIG --includedir`"
+       pgsql_LDFLAGS="-L`$PGSQL_CONFIG --libdir`"
+-      pgsql_LIBS="`$PGSQL_CONFIG --libs`"
++      pgsql_LIBS="-lpq"
+ 
+       APR_ADDTO(CPPFLAGS, [$pgsql_CPPFLAGS])
+       APR_ADDTO(LDFLAGS, [$pgsql_LDFLAGS])

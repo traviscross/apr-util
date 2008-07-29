@@ -64,7 +64,7 @@ Description: The Apache Portable Runtime Utility Library - SQLite3 Driver
 Package: libaprutil1-dbd-odbc
 Architecture: any
 Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}
-Description: The Apache Portable Runtime Utility Library - SQLite3 Driver
+Description: The Apache Portable Runtime Utility Library - ODBC Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 
@@ -90,7 +90,7 @@ Description: The Apache Portable Runtime Utility Library - PostgreSQL Driver
 Package: libaprutil1-dbd-freetds
 Architecture: any
 Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}
-Description: The Apache Portable Runtime Utility Library - PostgreSQL Driver
+Description: The Apache Portable Runtime Utility Library - FreeTDS Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 

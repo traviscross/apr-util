@@ -1,3 +1,10 @@
+apr-util (1.2.12+dfsg-9) UNRELEASED; urgency=low
+
+  * Fix short description for libapr1-dbg to say debugging symbols, not
+    development headers.  Closes: #508145
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Thu, 25 Dec 2008 10:26:10 +0100
+
 apr-util (1.2.12+dfsg-8) unstable; urgency=low
 
   [ Ryan Niebur ]

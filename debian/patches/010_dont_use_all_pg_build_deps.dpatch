@@ -5,33 +5,60 @@
 ## DP: No description.
 
 @DPATCH@
-diff -urNad apr-util~/build/dbd.m4 apr-util/build/dbd.m4
---- apr-util~/build/dbd.m4	2008-06-13 02:27:19.000000000 -0700
-+++ apr-util/build/dbd.m4	2008-07-07 18:56:03.000000000 -0700
-@@ -35,7 +35,7 @@
+diff -urNad aprutil~/build/dbd.m4 aprutil/build/dbd.m4
+--- aprutil~/build/dbd.m4	2008-12-26 13:40:37.000000000 -0800
++++ aprutil/build/dbd.m4	2008-12-26 13:43:37.000000000 -0800
+@@ -44,7 +44,7 @@
+         AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1],[
+         if test "x$PGSQL_CONFIG" != 'x'; then
+           unset ac_cv_lib_pq_PQsendQueryPrepared
+-          pgsql_LIBS="`$PGSQL_CONFIG --libs`"
++          pgsql_LIBS="-lpq"
+           APR_ADDTO(LIBS, [$pgsql_LIBS])
+           AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1])
+         fi
+@@ -55,7 +55,7 @@
+           AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1],[
+           if test "x$PGSQL_CONFIG" != 'x'; then
+             unset ac_cv_lib_pq_PQsendQueryPrepared
+-            pgsql_LIBS="`$PGSQL_CONFIG --libs`"
++            pgsql_LIBS="-lpq"
+             APR_ADDTO(LIBS, [$pgsql_LIBS])
+             AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1])
+           fi
+@@ -85,7 +85,7 @@
+         AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1],[
+         if test "x$PGSQL_CONFIG" != 'x'; then
+           unset ac_cv_lib_pq_PQsendQueryPrepared
+-          pgsql_LIBS="`$PGSQL_CONFIG --libs`"
++          pgsql_LIBS="-lpq"
+           APR_ADDTO(LIBS, [$pgsql_LIBS])
+           AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1])
+         fi
+@@ -96,7 +96,7 @@
+           AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1],[
+           if test "x$PGSQL_CONFIG" != 'x'; then
+             unset ac_cv_lib_pq_PQsendQueryPrepared
+-            pgsql_LIBS="`$PGSQL_CONFIG --libs`"
++            pgsql_LIBS="-lpq"
+             APR_ADDTO(LIBS, [$pgsql_LIBS])
+             AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1])
+           fi
+@@ -121,7 +121,7 @@
+       AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1],[
        if test "x$PGSQL_CONFIG" != 'x'; then
-         pgsql_CPPFLAGS="-I`$PGSQL_CONFIG --includedir`"
-         pgsql_LDFLAGS="-L`$PGSQL_CONFIG --libdir`"
+         unset ac_cv_lib_pq_PQsendQueryPrepared
 -        pgsql_LIBS="`$PGSQL_CONFIG --libs`"
 +        pgsql_LIBS="-lpq"
- 
-         APR_ADDTO(CPPFLAGS, [$pgsql_CPPFLAGS])
-         APR_ADDTO(LDFLAGS, [$pgsql_LDFLAGS])
-@@ -56,7 +56,7 @@
-       if test "x$PGSQL_CONFIG" != 'x'; then
-         pgsql_CPPFLAGS="-I`$PGSQL_CONFIG --includedir`"
-         pgsql_LDFLAGS="-L`$PGSQL_CONFIG --libdir`"
--        pgsql_LIBS="`$PGSQL_CONFIG --libs`"
-+        pgsql_LIBS="-lpq"
-       else
-         pgsql_CPPFLAGS="-I$withval/include"
-         pgsql_LDFLAGS="-L$withval/lib "
-@@ -80,7 +80,7 @@
-     if test "x$PGSQL_CONFIG" != 'x'; then
-       pgsql_CPPFLAGS="-I`$PGSQL_CONFIG --includedir`"
-       pgsql_LDFLAGS="-L`$PGSQL_CONFIG --libdir`"
--      pgsql_LIBS="`$PGSQL_CONFIG --libs`"
-+      pgsql_LIBS="-lpq"
- 
-       APR_ADDTO(CPPFLAGS, [$pgsql_CPPFLAGS])
-       APR_ADDTO(LDFLAGS, [$pgsql_LDFLAGS])
+         APR_ADDTO(LIBS, [$pgsql_LIBS])
+         AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1])
+       fi
+@@ -132,7 +132,7 @@
+         AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1],[
+         if test "x$PGSQL_CONFIG" != 'x'; then
+           unset ac_cv_lib_pq_PQsendQueryPrepared
+-          pgsql_LIBS="`$PGSQL_CONFIG --libs`"
++          pgsql_LIBS="-lpq"
+           APR_ADDTO(LIBS, [$pgsql_LIBS])
+           AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1])
+         fi

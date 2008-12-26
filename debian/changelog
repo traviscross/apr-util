@@ -1,4 +1,4 @@
-apr-util (1.3.2+dfsg-2) UNRELEASED; urgency=low
+apr-util (1.3.4+dfsg-1) UNRELEASED; urgency=low
 
   [ Ryan Niebur ]
   * add me to Uploaders
@@ -8,8 +8,9 @@ apr-util (1.3.2+dfsg-2) UNRELEASED; urgency=low
 
   [ Ryan Niebur ]
   * add repack.sh
+  * New upstream version
 
- -- Ryan Niebur <ryanryan52@gmail.com>  Fri, 26 Dec 2008 13:26:44 -0800
+ -- Ryan Niebur <ryanryan52@gmail.com>  Fri, 26 Dec 2008 13:40:19 -0800
 
 apr-util (1.3.2+dfsg-1) experimental; urgency=low
 

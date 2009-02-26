@@ -1,4 +1,6 @@
 libaprutil-1.so.0 libaprutil1 #MINVER#
+| libaprutil1-ldap , libaprutil1 #MINVER#
+| libaprutil1-dbd-mysql|libaprutil1-dbd-sqlite3|libaprutil1-dbd-odbc|libaprutil1-dbd-pgsql|libaprutil1-dbd-freetds , libaprutil1 #MINVER#
  apr_base64_decode@Base 1.2.7+dfsg
  apr_base64_decode_binary@Base 1.2.7+dfsg
  apr_base64_decode_len@Base 1.2.7+dfsg
@@ -85,7 +87,7 @@ libaprutil-1.so.0 libaprutil1 #MINVER#
  apr_dbd_get_entry@Base 1.2.7+dfsg
  apr_dbd_get_name@Base 1.3.2+dfsg
  apr_dbd_get_row@Base 1.2.7+dfsg
- apr_dbd_init@Base 1.2.7+dfsg
+ apr_dbd_init@Base 1.2.7+dfsg 2
  apr_dbd_mutex_lock@Base 1.3.2+dfsg
  apr_dbd_mutex_unlock@Base 1.3.2+dfsg
 #MISSING: 1.3.2+dfsg# apr_dbd_mysql_driver@Base 1.2.12+dfsg
@@ -141,7 +143,7 @@ libaprutil-1.so.0 libaprutil1 #MINVER#
  apr_hook_sort_register@Base 1.2.7+dfsg
  apr_ldap_get_option@Base 1.2.7+dfsg
  apr_ldap_info@Base 1.2.7+dfsg
- apr_ldap_init@Base 1.2.7+dfsg
+ apr_ldap_init@Base 1.2.7+dfsg 1
  apr_ldap_is_ldap_url@Base 1.2.7+dfsg
  apr_ldap_is_ldapi_url@Base 1.2.7+dfsg
  apr_ldap_is_ldaps_url@Base 1.2.7+dfsg

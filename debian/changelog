@@ -29,14 +29,23 @@ apr-util (1.3.2+dfsg-1) experimental; urgency=low
 
 apr-util (1.2.12+dfsg-8) unstable; urgency=low
 
+  [ Ryan Niebur ]
   * Upgraded to policy version 3.8.0
     - Reference the copyright in common-licenses instead of including it
     - support for noopt in DEB_BUILD_OPTIONS
-    - Added a REAME.source
+    - Added a README.source
+    - added support for parallel in DEB_BUILD_OPTIONS
   * Dropped the XS- prefix for the Vcs fields in debian/control
   * Made the watch file notice 1.3.x
 
- -- Ryan Niebur <RyanRyan52@gmail.com>  Fri, 27 Jun 2008 14:41:13 -0700
+  [ Stefan Fritsch ]
+  * Bump libmysqlclient dependency to 5.0.51a since 5.0.32 from etch has some
+    bugs that can make apache2 hang (closes: #490859).
+  * Add 'Provides' for the modules that are still included in libaprutil1, but
+    will be moved to separate packages with apr-util 1.3.x. This will make
+    back-porting packages from lenny+1 to lenny easier.
+
+ -- Stefan Fritsch <sf@debian.org>  Wed, 20 Aug 2008 22:29:26 +0200
 
 apr-util (1.2.12+dfsg-7) unstable; urgency=medium
 

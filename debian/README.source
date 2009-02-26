@@ -15,3 +15,6 @@ dpatch will make a new patch in debian/patches/ if one with that name doesn't al
 To make it get used add it to debian/patches/00list .
 
 To make a patch not get used remove it from debian/patches/00list .
+
+Upstream tarballs need to be repackaged without crypto/apr_md4.c, crypto/apr_md5.c, include/apr_md4.h, and include/apr_md5.h because of their license.
+These are removed by debian/repack.sh, which is called from uscan.

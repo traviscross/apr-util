@@ -35,9 +35,8 @@ else
   endif
 endif
 
-ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
-  NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
-  MAKEFLAGS += -j$(NUMJOBS)
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
 endif
 
 ifeq (,$(findstring notest,$(DEB_BUILD_OPTIONS)))
@@ -56,10 +55,10 @@ CONFFLAGS += ac_cv_prog_AWK=mawk
 
 SHELL=/bin/bash
 
-config.status: configure patch-stamp
+config.status: configure
 	dh_testdir
 	./buildconf --with-apr=$(shell apr-1-config --srcdir)
-	$(CONFFLAGS) ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --enable-layout=Debian --with-apr=/usr/bin/apr-1-config --with-ldap=yes --with-dbm=db46 --with-sqlite3 --with-pgsql=/usr --without-gdbm --without-sqlite2 --with-berkeley-db --with-mysql=/usr
+	$(CONFFLAGS) ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --enable-layout=Debian --with-apr=/usr/bin/apr-1-config --with-ldap=yes --with-dbm=db46 --with-sqlite3 --with-pgsql=/usr --without-gdbm --without-sqlite2 --with-berkeley-db --with-mysql=/usr --with-freetds=/usr --with-odbc=/usr
 
 build: patch-stamp build-stamp
 
@@ -110,7 +109,8 @@ binary-arch: build install
 	dh_strip --dbg-package=libaprutil1-dbg
 	dh_compress
 	dh_fixperms
-	dh_makeshlibs
+	dh_makeshlibs -plibaprutil1
+	dh_makeshlibs -n -Nlibaprutil1
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol

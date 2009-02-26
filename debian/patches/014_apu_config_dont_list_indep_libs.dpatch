@@ -4,22 +4,22 @@
 ## DP: Prevent recursive linking of dependent libraries by apr-util users.
 
 @DPATCH@
-Index: apr-util.pc.in
---- a/apr-util.pc.in
-+++ b/apr-util.pc.in
+diff -urNad apr-util~/apr-util.pc.in apr-util/apr-util.pc.in
+--- apr-util~/apr-util.pc.in	2008-06-27 15:36:07.000000000 -0700
++++ apr-util/apr-util.pc.in	2008-06-27 16:03:17.000000000 -0700
 @@ -8,6 +8,7 @@
  Description: Companion library for APR
  Version: @APRUTIL_DOTTED_VERSION@
  # assume that apr-util requires libapr of same major version
 -Requires: apr-@APRUTIL_MAJOR_VERSION@
--Libs: -L${libdir} -l@APRUTIL_LIBNAME@ @APRUTIL_EXPORT_LIBS@
+-Libs: -L${libdir} -l@APRUTIL_LIBNAME@ @LDADD_ldap@ @APRUTIL_EXPORT_LIBS@
 +Requires.private: apr-@APRUTIL_MAJOR_VERSION@
-+Libs: -L${libdir} -l@APRUTIL_LIBNAME@
++Libs: -L${libdir} -l@APRUTIL_LIBNAME@ @LDADD_ldap@
 +Libs.private: @APRUTIL_EXPORT_LIBS@
  Cflags: -I${includedir}
-Index: apu-config.in
---- a/apu-config.in
-+++ b/apu-config.in
+diff -urNad apr-util~/apu-config.in apr-util/apu-config.in
+--- apr-util~/apu-config.in	2008-05-23 14:27:59.000000000 -0700
++++ apr-util/apu-config.in	2008-06-27 16:30:04.000000000 -0700
 @@ -27,7 +27,7 @@
  libdir="@libdir@"
  includedir="@includedir@"
@@ -28,4 +28,4 @@ Index: apu-config.in
 +LIBS=
  INCLUDES="@APRUTIL_INCLUDES@"
  LDFLAGS="@APRUTIL_LDFLAGS@"
- 
+ LDAP_LIBS="@LDADD_ldap@"

@@ -40,7 +40,7 @@ ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
   MAKEFLAGS += -j$(NUMJOBS)
 endif
 
-ifeq (,$(findstring notest,$(DEB_BUILD_OPTIONS)))
+ifeq (,$(findstring notest,$(DEB_BUILD_OPTIONS))$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
 	TEST_TARGET = test
 else
 	TEST_TARGET =

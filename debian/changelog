@@ -16,7 +16,7 @@ apr-util (1.3.4+dfsg-1) unstable; urgency=low
   * upload to unstable this time
 
   [ Stefan Fritsch ]
-  * Fix decription for libaprutil1-dbg (closes: #508145).
+  * Fix description for libaprutil1-dbg (closes: #508145).
   * Recognize DEB_BUILD_OPTIONS=nocheck in addition to notest (closes: #515352).
   * Make dpkg-shlibdeps automatically generate the needed dependencies for
     programs that use apr_ldap_init() or apr_dbd_init().

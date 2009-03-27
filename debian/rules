@@ -80,7 +80,7 @@ clean: unpatch
 	[ ! -f Makefile ] || $(MAKE) distclean
 	rm -f test/data/test-db test/data/test-sdbm.dir test/data/test-sdbm.pag
 	rm -f xml/expat/aclocal.m4 xml/expat/configure xml/expat/conftools/ltmain.sh
-	rm -f build-outputs.mk build/config.guess build/config.sub config.nice configure config.log
+	rm -f build-outputs.mk build/apr_common.m4 build/config.guess build/config.sub config.nice configure config.log
 
 	dh_clean
 
@@ -107,6 +107,7 @@ binary-arch: build install
 	dh_testroot
 	dh_installchangelogs CHANGES
 	dh_installdocs
+	dh_lintian
 	dh_install -a
 	dh_link
 	dh_strip --dbg-package=libaprutil1-dbg

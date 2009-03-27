@@ -7,6 +7,11 @@ apr-util (1.3.4+dfsg-1) UNRELEASED; urgency=low
   * update to libdb4.7-dev (Closes: #519818)
   * Debian policy 3.8.1
   * remove *.dirs, they're not needed
+  * lintian overrides for the symbols file depending on different
+    packages, we have those "unusual circumstances" :)
+    - debhelper 6 (needed for dh_lintian)
+  * remove build/apr_common.m4 in the clean target, it gets modified
+    during build and is automatically generated
 
   [ Stefan Fritsch ]
   * Fix decription for libaprutil1-dbg (closes: #508145).
@@ -16,7 +21,7 @@ apr-util (1.3.4+dfsg-1) UNRELEASED; urgency=low
     For dbd, we will genreate an ORed dependency on all libaprutil1-dbd-*
     packages, using libaprutil1-dbd-mysql as default.
 
- -- Ryan Niebur <ryanryan52@gmail.com>  Thu, 26 Mar 2009 20:29:49 -0700
+ -- Ryan Niebur <ryanryan52@gmail.com>  Thu, 26 Mar 2009 21:04:01 -0700
 
 apr-util (1.3.2+dfsg-1) experimental; urgency=low
 

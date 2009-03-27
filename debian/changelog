@@ -4,6 +4,8 @@ apr-util (1.3.4+dfsg-1) UNRELEASED; urgency=low
   * New upstream version
   * add me to Uploaders
   * add repack.sh
+  * update to libdb4.7-dev (Closes: #519818)
+  * Debian policy 3.8.1
 
   [ Stefan Fritsch ]
   * Fix decription for libaprutil1-dbg (closes: #508145).
@@ -13,7 +15,7 @@ apr-util (1.3.4+dfsg-1) UNRELEASED; urgency=low
     For dbd, we will genreate an ORed dependency on all libaprutil1-dbd-*
     packages, using libaprutil1-dbd-mysql as default.
 
- -- Ryan Niebur <ryanryan52@gmail.com>  Fri, 26 Dec 2008 13:40:19 -0800
+ -- Ryan Niebur <ryanryan52@gmail.com>  Thu, 26 Mar 2009 17:50:39 -0700
 
 apr-util (1.3.2+dfsg-1) experimental; urgency=low
 

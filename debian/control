@@ -118,7 +118,7 @@ Description: The Apache Portable Runtime Utility Library - Development Headers
 Package: libaprutil1-dbg
 Priority: extra
 Architecture: any
-Section: libdevel
+Section: debug
 Depends: libaprutil1 (= ${binary:Version})
 Conflicts: libaprutil1.0-dev
 Description: The Apache Portable Runtime Utility Library - Debugging Symbols

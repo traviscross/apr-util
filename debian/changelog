@@ -13,6 +13,7 @@ apr-util (1.3.4+dfsg-1) unstable; urgency=low
   * remove build/apr_common.m4 in the clean target, it gets modified
     during build and is automatically generated
   * switch the libaprutil1-dbg package to the debug section
+  * don't output ldap libs by default from apu-config
   * upload to unstable this time
 
   [ Stefan Fritsch ]

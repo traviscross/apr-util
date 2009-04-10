@@ -11,7 +11,7 @@ Homepage: http://apr.apache.org/
 
 Package: libaprutil1
 Architecture: any
-Depends: ${shlibs:Depends}, libmysqlclient15off (>> 5.0.51a)
+Depends: ${shlibs:Depends}
 Conflicts: libaprutil1.0, apache2.2-common (<< 2.2.8-1~)
 Description: The Apache Portable Runtime Utility Library
  APR is Apache's Portable Runtime Library, designed to be a support library 
@@ -36,7 +36,7 @@ Description: The Apache Portable Runtime Utility Library - LDAP Driver
 
 Package: libaprutil1-dbd-mysql
 Architecture: any
-Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}
+Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, libmysqlclient15off (>> 5.0.51a)
 Conflicts: php5-mysql (<< 5.2.6-1~), php4-mysql (<< 6:4.4.4-10)
 Description: The Apache Portable Runtime Utility Library - MySQL Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 

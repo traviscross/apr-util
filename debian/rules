@@ -88,7 +88,7 @@ test: test-stamp
 
 test-stamp: build
 	dh_testdir
-	$(MAKE) check
+	$(MAKE) -j 1 check
 
 	touch $@
 

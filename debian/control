@@ -12,7 +12,7 @@ Homepage: http://apr.apache.org/
 Package: libaprutil1
 Architecture: any
 Depends: ${shlibs:Depends}
-Conflicts: libaprutil1.0, apache2.2-common (<< 2.2.8-1~)
+Conflicts: libaprutil1.0
 Breaks: apache2.2-common << 2.2.11-3
 Description: The Apache Portable Runtime Utility Library
  APR is Apache's Portable Runtime Library, designed to be a support library 

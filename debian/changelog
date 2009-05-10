@@ -6,6 +6,8 @@ apr-util (1.3.4+dfsg-2) UNRELEASED; urgency=low
 
   [ Stefan Fritsch ]
   * Add workaround to fix FTBFS when doing parallel build (closes: #527812)
+  * Add "Breaks: apache2.2-common << 2.2.11-3", to make upgrades from lenny
+    to squeeze less noisy.
 
  -- Stefan Fritsch <sf@debian.org>  Sat, 11 Apr 2009 20:56:23 +0200
 

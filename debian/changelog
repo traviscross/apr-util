@@ -6,6 +6,7 @@ apr-util (1.3.7+dfsg-1) UNRELEASED; urgency=high
     - Fix DoS vulnerability (memory consumption) in handling of internal xml
       entities.
   * Disable test suite on hurd for now (closes: #530287).
+  * Override lintian warning about soname.
 
  -- Stefan Fritsch <sf@debian.org>  Sat, 30 May 2009 17:42:08 +0200
 

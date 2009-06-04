@@ -128,7 +128,7 @@ libaprutil-1.so.0 libaprutil1 #MINVER#
  apr_dbm_open@Base 1.2.7+dfsg
  apr_dbm_open_ex@Base 1.2.7+dfsg
  apr_dbm_store@Base 1.2.7+dfsg
- apr_dbm_type_db@Base 1.2.7+dfsg
+#MISSING: 1.3.5+dfsg-1# apr_dbm_type_db@Base 1.2.7+dfsg
  apr_dbm_type_sdbm@Base 1.2.7+dfsg
  apr_debug_module_hooks@Base 1.2.7+dfsg
  apr_dynamic_fn_register@Base 1.2.7+dfsg

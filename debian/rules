@@ -46,6 +46,10 @@ else
 	TEST_TARGET =
 endif
 
+ifeq (gnu, $(DEB_BUILD_GNU_SYSTEM))
+	TEST_TARGET =
+endif
+
 ifeq ($(DEB_BUILD_ARCH),i386)
         CONFFLAGS=apr_lock_method=USE_PROC_PTHREAD_SERIALIZE
 else

@@ -1,3 +1,14 @@
+apr-util (1.3.7+dfsg-1) UNRELEASED; urgency=high
+
+  * New upstream version:
+    - CVE-2009-0023: Fix underflow in apr_strmatch_precompile() which causes
+      remotely exploitable DoS vulnerabilities in mod_dav_svn and libapreq2.
+    - Fix DoS vulnerability (memory consumption) in handling of internal xml
+      entities.
+  * Disable test suite on hurd for now (closes: #530287).
+
+ -- Stefan Fritsch <sf@debian.org>  Sat, 30 May 2009 17:42:08 +0200
+
 apr-util (1.3.4+dfsg-2) unstable; urgency=low
 
   [ Ryan Niebur ]

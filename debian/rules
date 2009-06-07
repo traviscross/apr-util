@@ -46,6 +46,7 @@ else
 	TEST_TARGET =
 endif
 
+# disable tests on hurd until they are fixed (see #530287)
 ifeq (gnu, $(DEB_BUILD_GNU_SYSTEM))
 	TEST_TARGET =
 endif

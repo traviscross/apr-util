@@ -1,6 +1,6 @@
 libaprutil-1.so.0 libaprutil1 #MINVER#
 | libaprutil1-ldap , libaprutil1 #MINVER#
-| libaprutil1-dbd-mysql|libaprutil1-dbd-sqlite3|libaprutil1-dbd-odbc|libaprutil1-dbd-pgsql|libaprutil1-dbd-freetds , libaprutil1 #MINVER#
+| libaprutil1-dbd-sqlite3|libaprutil1-dbd-mysql|libaprutil1-dbd-odbc|libaprutil1-dbd-pgsql|libaprutil1-dbd-freetds , libaprutil1 #MINVER#
  apr_base64_decode@Base 1.2.7+dfsg
  apr_base64_decode_binary@Base 1.2.7+dfsg
  apr_base64_decode_len@Base 1.2.7+dfsg

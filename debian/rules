@@ -17,12 +17,8 @@ CFLAGS := $(CFLAGS) $(shell apr-1-config --cflags |perl -p -e 's!-O.( |$$)!!')
 LDFLAGS := $(LDFLAGS) $(shell apr-1-config --ldflags)
 
 # hardening options
-H_CFLAGS := -Wformat -Wformat-security -D_FORTIFY_SOURCE=2
+H_CFLAGS := -Wformat -Wformat-security -D_FORTIFY_SOURCE=2 -fstack-protector
 H_LDFLAGS := -Wl,-z,relro
-# do not enable -fstack-protector on arm and armel, see #477772, #469517
-ifeq (,$(findstring arm,$(DEB_HOST_GNU_TYPE)))
-        H_CFLAGS += -fstack-protector
-endif
 
 # Enable debug builds
 ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))

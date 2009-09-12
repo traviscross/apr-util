@@ -1,5 +1,7 @@
 apr-util (1.3.9+dfsg-2) UNRELEASED; urgency=low
 
+  * Fix FTBFS (closes: #545718). The FTBFS didn't happen with dash as /bin/sh
+    due to dash bug #514863.
   * Make libaprutil1-dev depend on libmysqlclient-dev instead of
     libmysqlclient15-dev.
 

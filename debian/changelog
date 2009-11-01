@@ -1,10 +1,10 @@
-apr-util (1.3.9+dfsg-3) UNRELEASED; urgency=low
+apr-util (1.3.9+dfsg-3) unstable; urgency=low
 
   * Update to db4.8 (closes: #550443)
   * Bump standards-version:
     - Use DEB_*_ARCH_* where applicable
 
- -- Stefan Fritsch <sf@debian.org>  Sun, 01 Nov 2009 10:25:41 +0100
+ -- Stefan Fritsch <sf@debian.org>  Sun, 01 Nov 2009 10:40:53 +0100
 
 apr-util (1.3.9+dfsg-2) unstable; urgency=low
 

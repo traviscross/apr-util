@@ -11,7 +11,7 @@ Homepage: http://apr.apache.org/
 
 Package: libaprutil1
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: libaprutil1.0
 Breaks: apache2.2-common (<< 2.2.11-3)
 Description: The Apache Portable Runtime Utility Library
@@ -24,7 +24,7 @@ Description: The Apache Portable Runtime Utility Library
 
 Package: libaprutil1-ldap
 Architecture: any
-Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}
+Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: The Apache Portable Runtime Utility Library - LDAP Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
@@ -37,7 +37,7 @@ Description: The Apache Portable Runtime Utility Library - LDAP Driver
 
 Package: libaprutil1-dbd-mysql
 Architecture: any
-Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}
+Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Conflicts: php5-mysql (<< 5.2.6-1~), php4-mysql (<< 6:4.4.4-10)
 Description: The Apache Portable Runtime Utility Library - MySQL Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
@@ -51,7 +51,7 @@ Description: The Apache Portable Runtime Utility Library - MySQL Driver
 
 Package: libaprutil1-dbd-sqlite3
 Architecture: any
-Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}
+Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: The Apache Portable Runtime Utility Library - SQLite3 Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
@@ -64,7 +64,7 @@ Description: The Apache Portable Runtime Utility Library - SQLite3 Driver
 
 Package: libaprutil1-dbd-odbc
 Architecture: any
-Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}
+Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: The Apache Portable Runtime Utility Library - ODBC Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
@@ -77,7 +77,7 @@ Description: The Apache Portable Runtime Utility Library - ODBC Driver
 
 Package: libaprutil1-dbd-pgsql
 Architecture: any
-Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}
+Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: The Apache Portable Runtime Utility Library - PostgreSQL Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
@@ -90,7 +90,7 @@ Description: The Apache Portable Runtime Utility Library - PostgreSQL Driver
 
 Package: libaprutil1-dbd-freetds
 Architecture: any
-Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}
+Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: The Apache Portable Runtime Utility Library - FreeTDS Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
@@ -104,7 +104,7 @@ Description: The Apache Portable Runtime Utility Library - FreeTDS Driver
 Package: libaprutil1-dev
 Architecture: any
 Section: libdevel
-Depends: libaprutil1 (= ${binary:Version}), libldap2-dev, libexpat1-dev, libdb4.8-dev, libpcre3-dev, libapr1-dev (>= 1.2.2-1), libsqlite3-dev, libpq-dev, libmysqlclient-dev
+Depends: libaprutil1 (= ${binary:Version}), libldap2-dev, libexpat1-dev, libdb4.8-dev, libpcre3-dev, libapr1-dev (>= 1.2.2-1), libsqlite3-dev, libpq-dev, libmysqlclient-dev, ${misc:Depends}
 Conflicts: libaprutil1.0-dev
 Description: The Apache Portable Runtime Utility Library - Development Headers
  APR is Apache's Portable Runtime Library, designed to be a support library 
@@ -120,7 +120,7 @@ Package: libaprutil1-dbg
 Priority: extra
 Architecture: any
 Section: debug
-Depends: libaprutil1 (= ${binary:Version})
+Depends: libaprutil1 (= ${binary:Version}), ${misc:Depends}
 Conflicts: libaprutil1.0-dev
 Description: The Apache Portable Runtime Utility Library - Debugging Symbols
  APR is Apache's Portable Runtime Library, designed to be a support library 

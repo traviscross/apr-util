@@ -1,6 +1,7 @@
 apr-util (1.3.10+dfsg-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Add ${misc:Depends} to Depends.
 
  -- Stefan Fritsch <sf@debian.org>  Sun, 06 Feb 2011 22:33:55 +0100
 

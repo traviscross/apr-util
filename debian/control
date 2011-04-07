@@ -101,7 +101,7 @@ Description: The Apache Portable Runtime Utility Library - FreeTDS Driver
 Package: libaprutil1-dev
 Architecture: any
 Section: libdevel
-Depends: libaprutil1 (= ${binary:Version}), libldap2-dev, libexpat1-dev, libdb4.8-dev, libpcre3-dev, libapr1-dev (>= 1.2.2-1), libsqlite3-dev, libpq-dev, libmysqlclient-dev, ${misc:Depends}
+Depends: libaprutil1 (= ${binary:Version}), libldap2-dev, libexpat1-dev, libpcre3-dev, libapr1-dev (>= 1.2.2-1), libsqlite3-dev, libpq-dev, libmysqlclient-dev, ${misc:Depends}
 Description: The Apache Portable Runtime Utility Library - Development Headers
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 

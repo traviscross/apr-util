@@ -3,6 +3,11 @@ apr-util (1.3.10+dfsg-2) UNRELEASED; urgency=low
   * Remove libdb4.8-dev dependency in libaprutil1-dev. This allows packages
     build-depending on apr-util1 to use a different version of db than
     apr-util.
+  * With the libdb build-dependency decoupled from subversion, we can now
+    build-depend on libdb-dev instead of libdb4.8-dev. Users of APU_WANT_DB
+    in apu_want.h would have to depend on libdb-dev explicitly, but there
+    are none outside of apr-util itself. Closes: #621366
+  * Add configure support for libdb 5.1.
 
  -- Stefan Fritsch <sf@debian.org>  Thu, 07 Apr 2011 19:14:07 +0200
 

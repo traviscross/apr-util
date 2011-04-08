@@ -12,7 +12,7 @@ Homepage: http://apr.apache.org/
 Package: libaprutil1
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: The Apache Portable Runtime Utility Library
+Description: Apache Portable Runtime Utility Library
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 
@@ -23,7 +23,7 @@ Description: The Apache Portable Runtime Utility Library
 Package: libaprutil1-ldap
 Architecture: any
 Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: The Apache Portable Runtime Utility Library - LDAP Driver
+Description: Apache Portable Runtime Utility Library - LDAP Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 
@@ -36,7 +36,7 @@ Description: The Apache Portable Runtime Utility Library - LDAP Driver
 Package: libaprutil1-dbd-mysql
 Architecture: any
 Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: The Apache Portable Runtime Utility Library - MySQL Driver
+Description: Apache Portable Runtime Utility Library - MySQL Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 
@@ -49,7 +49,7 @@ Description: The Apache Portable Runtime Utility Library - MySQL Driver
 Package: libaprutil1-dbd-sqlite3
 Architecture: any
 Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: The Apache Portable Runtime Utility Library - SQLite3 Driver
+Description: Apache Portable Runtime Utility Library - SQLite3 Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 
@@ -62,7 +62,7 @@ Description: The Apache Portable Runtime Utility Library - SQLite3 Driver
 Package: libaprutil1-dbd-odbc
 Architecture: any
 Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: The Apache Portable Runtime Utility Library - ODBC Driver
+Description: Apache Portable Runtime Utility Library - ODBC Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 
@@ -75,7 +75,7 @@ Description: The Apache Portable Runtime Utility Library - ODBC Driver
 Package: libaprutil1-dbd-pgsql
 Architecture: any
 Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: The Apache Portable Runtime Utility Library - PostgreSQL Driver
+Description: Apache Portable Runtime Utility Library - PostgreSQL Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 
@@ -88,7 +88,7 @@ Description: The Apache Portable Runtime Utility Library - PostgreSQL Driver
 Package: libaprutil1-dbd-freetds
 Architecture: any
 Depends: libaprutil1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: The Apache Portable Runtime Utility Library - FreeTDS Driver
+Description: Apache Portable Runtime Utility Library - FreeTDS Driver
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 
@@ -102,7 +102,7 @@ Package: libaprutil1-dev
 Architecture: any
 Section: libdevel
 Depends: libaprutil1 (= ${binary:Version}), libldap2-dev, libexpat1-dev, libpcre3-dev, libapr1-dev (>= 1.2.2-1), libsqlite3-dev, libpq-dev, libmysqlclient-dev, ${misc:Depends}
-Description: The Apache Portable Runtime Utility Library - Development Headers
+Description: Apache Portable Runtime Utility Library - Development Headers
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 
@@ -117,7 +117,7 @@ Priority: extra
 Architecture: any
 Section: debug
 Depends: libaprutil1 (= ${binary:Version}), ${misc:Depends}
-Description: The Apache Portable Runtime Utility Library - Debugging Symbols
+Description: Apache Portable Runtime Utility Library - Debugging Symbols
  APR is Apache's Portable Runtime Library, designed to be a support library 
  that provides a predictable and consistent interface to underlying 
  platform-specific implementations. 

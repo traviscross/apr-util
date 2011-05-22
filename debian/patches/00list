@@ -7,5 +7,5 @@
 013_ship_find_apu.m4
 014_apu_config_dont_list_indep_libs
 015_disable_expat_buildconf.dpatch
-016_bdb5.1.dpatch
+016_avoid_db_by-default.dpatch
 099_alternate_md4_md5_impl

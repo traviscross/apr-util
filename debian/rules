@@ -4,6 +4,9 @@
 #export DH_VERBOSE=1
 export DH_OPTIONS
 
+# for ppc64 on Ubuntu
+export DEB_GCC_NO_O3=1
+
 #enable dpatch
 include /usr/share/dpatch/dpatch.make
 

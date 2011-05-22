@@ -1,0 +1,38 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 016_avoid_db_by-default.dpatch by Stefan Fritsch <sf@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: #622081
+
+@DPATCH@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' trunk~/apu-config.in trunk/apu-config.in
+--- trunk~/apu-config.in	2011-05-21 21:41:11.239997616 +0200
++++ trunk/apu-config.in	2011-05-21 21:41:39.687997599 +0200
+@@ -32,7 +32,8 @@
+ LDFLAGS="@APRUTIL_LDFLAGS@"
+ ORIG_LDAP_LIBS="@LDADD_ldap@"
+ LDAP_LIBS=""
+-DBM_LIBS="@LDADD_dbm_db@ @LDADD_dbm_gdbm@ @LDADD_dbm_ndbm@"
++ORIG_DBM_LIBS="@LDADD_dbm_db@ @LDADD_dbm_gdbm@ @LDADD_dbm_ndbm@"
++DBM_LIBS=""
+ 
+ APRUTIL_LIBNAME="@APRUTIL_LIBNAME@"
+ 
+@@ -58,7 +59,7 @@
+   --libs            print library information
+   --avoid-ldap      do not include ldap library information with --libs (default on Debian)
+   --ldap-libs       print additional library information to link with ldap
+-  --avoid-dbm       do not include DBM library information with --libs
++  --avoid-dbm       do not include DBM library information with --libs (default on Debian)
+   --dbm-libs        print additional library information to link with DBM
+   --srcdir          print APR-util source directory
+   --link-ld         print link switch(es) for linking to APR-util
+@@ -129,7 +130,7 @@
+     flags="$flags $ORIG_LDAP_LIBS"
+     ;;
+     --dbm-libs)
+-    flags="$flags $DBM_LIBS"
++    flags="$flags $ORIG_DBM_LIBS"
+     ;;
+     --includedir)
+     if test "$location" = "installed"; then

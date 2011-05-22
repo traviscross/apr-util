@@ -1,0 +1,34 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 017_thread_pool_fix.dpatch by Stefan Fritsch <sf@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Fix unsafe pool usage
+
+@DPATCH@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' trunk~/misc/apr_thread_pool.c trunk/misc/apr_thread_pool.c
+--- trunk~/misc/apr_thread_pool.c	2010-12-09 15:34:41.000000000 +0100
++++ trunk/misc/apr_thread_pool.c	2011-05-22 20:33:06.599996851 +0200
+@@ -353,13 +353,18 @@
+     *me = NULL;
+     tp = apr_pcalloc(pool, sizeof(apr_thread_pool_t));
+ 
+-    tp->pool = pool;
+-
++    /*
++     * This pool will be used by different threads. As we cannot ensure that
++     * our caller won't use the pool without acquiring the mutex, we must
++     * create a new sub pool.
++     */
++    rv = apr_pool_create(&tp->pool, pool);
++    if (APR_SUCCESS != rv)
++        return rv;
+     rv = thread_pool_construct(tp, init_threads, max_threads);
+-    if (APR_SUCCESS != rv) {
++    if (APR_SUCCESS != rv)
+         return rv;
+-    }
+-    apr_pool_cleanup_register(pool, tp, thread_pool_cleanup,
++    apr_pool_cleanup_register(tp->pool, tp, thread_pool_cleanup,
+                               apr_pool_cleanup_null);
+ 
+     while (init_threads) {

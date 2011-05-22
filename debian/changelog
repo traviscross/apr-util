@@ -1,3 +1,10 @@
+apr-util (1.3.12+dfsg-2) unstable; urgency=low
+
+  * Fix unsafe pool usage in apr_thread_pool. This hopefully fixes the
+    occasional testreslist failures.
+
+ -- Stefan Fritsch <sf@debian.org>  Sun, 22 May 2011 20:37:08 +0200
+
 apr-util (1.3.12+dfsg-1) unstable; urgency=low
 
   * New upstream version

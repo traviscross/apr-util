@@ -1,5 +1,7 @@
 apr-util (1.3.12+dfsg-3) UNRELEASED; urgency=low
 
+  * Add workaround for ldap detection problem, to fix FTBFS with gcc 4.6.
+    Closes: #651147
   * Remove Tollef Fog Heen and Ryan Niebur from uploaders. Thanks for your
     work in the past.
 

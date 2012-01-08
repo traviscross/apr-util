@@ -6,8 +6,8 @@
 
 @DPATCH@
 diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' trunk~/apu-config.in trunk/apu-config.in
---- trunk~/apu-config.in	2011-05-21 21:41:11.239997616 +0200
-+++ trunk/apu-config.in	2011-05-21 21:41:39.687997599 +0200
+--- trunk~/apu-config.in
++++ trunk/apu-config.in
 @@ -32,7 +32,8 @@
  LDFLAGS="@APRUTIL_LDFLAGS@"
  ORIG_LDAP_LIBS="@LDADD_ldap@"
@@ -18,15 +18,17 @@ diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' 
  
  APRUTIL_LIBNAME="@APRUTIL_LIBNAME@"
  
-@@ -58,7 +59,7 @@
+@@ -58,8 +59,8 @@
    --libs            print library information
    --avoid-ldap      do not include ldap library information with --libs (default on Debian)
-   --ldap-libs       print additional library information to link with ldap
+   --ldap-libs       print library information to link with ldap
 -  --avoid-dbm       do not include DBM library information with --libs
+-  --dbm-libs        print additional library information to link with DBM
 +  --avoid-dbm       do not include DBM library information with --libs (default on Debian)
-   --dbm-libs        print additional library information to link with DBM
++  --dbm-libs        print library information to link with DBM
    --srcdir          print APR-util source directory
    --link-ld         print link switch(es) for linking to APR-util
+   --link-libtool    print the libtool inputs for linking to APR-util
 @@ -129,7 +130,7 @@
      flags="$flags $ORIG_LDAP_LIBS"
      ;;

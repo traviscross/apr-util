@@ -8,5 +8,3 @@
 014_apu_config_dont_list_indep_libs
 015_disable_expat_buildconf.dpatch
 016_avoid_db_by-default.dpatch
-017_thread_pool_fix.dpatch
-099_alternate_md4_md5_impl

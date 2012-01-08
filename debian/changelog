@@ -1,3 +1,14 @@
+apr-util (1.4.1-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Stop repacking the source tarball to remove the MD4/MD5 implementations
+    derived from RSA's code. RSA has made a statement that revised the
+    conditions of use for the code. Debian uses the code according to the
+    conditions from this statement, whic is now included in the copyright
+    file.
+
+ -- Stefan Fritsch <sf@debian.org>  Sun, 08 Jan 2012 19:24:12 +0100
+
 apr-util (1.3.12+dfsg-3) unstable; urgency=high
 
   * Add workaround for ldap detection problem, to fix FTBFS with gcc 4.6.

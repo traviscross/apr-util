@@ -6,6 +6,7 @@ apr-util (1.4.1-1) UNRELEASED; urgency=low
     conditions of use for the code. Debian uses the code according to the
     conditions from this statement, whic is now included in the copyright
     file.
+  * Build new apr_crypto API (using openssl).
 
  -- Stefan Fritsch <sf@debian.org>  Sun, 08 Jan 2012 19:24:12 +0100
 

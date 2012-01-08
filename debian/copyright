@@ -144,9 +144,9 @@ From test/CuTest.c, test/CuTest.h:
 The source files crypto/apr_md4.c and crypto/apr_md5.c contain code which is
 derived from reference code from RFC-1320, and RFC-1321. This code is
 copyright RSA Data Security, Inc. ("RSA"). RSA made the following statement
-about the conditions of use of this code. Debian choses to use and
+about the conditions of use of this code. Debian chooses to use and
 distribute this code according to the conditions outlined in this statement
-and NOT according to licence contained in the source files.
+and NOT according to the license contained in the source files.
 
   The following was recevied Fenbruary 23,2000 From: "Linn, John" February 19,
   2000

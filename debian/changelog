@@ -1,14 +1,14 @@
-apr-util (1.4.1-1) UNRELEASED; urgency=low
+apr-util (1.4.1-1) unstable; urgency=low
 
   * New upstream release
-  * Stop repacking the source tarball to remove the MD4/MD5 implementations
-    derived from RSA's code. RSA has made a statement that revised the
-    conditions of use for the code. Debian uses the code according to the
-    conditions from this statement, whic is now included in the copyright
-    file.
   * Build new apr_crypto API (using openssl).
+  * Stop repacking the source tarball to remove the MD4/MD5 implementations
+    derived from RSA's code. RSA has released a statement that revised the
+    conditions of use for this code. Debian uses the code according to the
+    conditions from this statement, which is now included in the copyright
+    file of the Debian package.
 
- -- Stefan Fritsch <sf@debian.org>  Sun, 08 Jan 2012 19:24:12 +0100
+ -- Stefan Fritsch <sf@debian.org>  Sun, 08 Jan 2012 20:44:17 +0100
 
 apr-util (1.3.12+dfsg-3) unstable; urgency=high
 

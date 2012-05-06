@@ -293,10 +293,11 @@ static apr_status_t odbc_close_results(void *d)
 {   apr_dbd_results_t *dbr = (apr_dbd_results_t *) d;
     SQLRETURN rc = SQL_SUCCESS;
     
-    if (dbr && !dbr->isclosed) {
-        rc = SQLCloseCursor(dbr->stmt);
+    if (dbr && dbr->apr_dbd && dbr->apr_dbd->dbc) {
+    	if (!dbr->isclosed) 
+        	rc = SQLCloseCursor(dbr->stmt);
+    	dbr->isclosed = 1;
     }
-    dbr->isclosed = 1;
     return APR_FROM_SQL_RESULT(rc);
 }
 
@@ -305,12 +306,15 @@ static apr_status_t odbc_close_pstmt(void *s)
 {   
     SQLRETURN rc = APR_SUCCESS;
     apr_dbd_prepared_t *statement = s;
-    SQLHANDLE hstmt = statement->stmt;
     /* stmt is closed if connection has already been closed */
-    if (hstmt && statement->apr_dbd && statement->apr_dbd->dbc) {
-        rc = SQLFreeHandle(SQL_HANDLE_STMT, hstmt);
+    if (statement) {
+        SQLHANDLE hstmt = statement->stmt;
+
+        if (hstmt && statement->apr_dbd && statement->apr_dbd->dbc) {
+            rc = SQLFreeHandle(SQL_HANDLE_STMT, hstmt);
         }
-    statement->stmt = NULL;
+        statement->stmt = NULL;
+    }
     return APR_FROM_SQL_RESULT(rc);
 }
 
@@ -1307,10 +1311,11 @@ static const char *odbc_get_entry(const apr_dbd_row_t * row, int col)
 
     p = odbc_get(row, col, SQL_C_CHAR);
 
-    if ((signed int) p > 0)
-        return apr_pstrdup(row->pool, p);   /* row pool lifetime */
+    /* NULL or invalid (-1) */
+    if (p == NULL || p == (void *) -1)
+        return p;     
     else
-        return p;     /* NULL or invalid (-1) */
+        return apr_pstrdup(row->pool, p);   
 }
 
 /** error: get current error message (if any) **/

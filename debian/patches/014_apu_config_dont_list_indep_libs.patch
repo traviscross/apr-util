@@ -6,8 +6,10 @@ Subject: Prevent recursive linking of dependent libraries by apr-util users.
  apu-config.in  |    2 +-
  2 files changed, 4 insertions(+), 3 deletions(-)
 
---- a/apr-util.pc.in
-+++ b/apr-util.pc.in
+Index: trunk/apr-util.pc.in
+===================================================================
+--- trunk.orig/apr-util.pc.in
++++ trunk/apr-util.pc.in
 @@ -8,6 +8,7 @@
  Description: Companion library for APR
  Version: @APRUTIL_DOTTED_VERSION@
@@ -18,8 +20,10 @@ Subject: Prevent recursive linking of dependent libraries by apr-util users.
 +Libs: -L${libdir} -l@APRUTIL_LIBNAME@ @LDADD_ldap@
 +Libs.private: @APRUTIL_EXPORT_LIBS@
  Cflags: -I${includedir}
---- a/apu-config.in
-+++ b/apu-config.in
+Index: trunk/apu-config.in
+===================================================================
+--- trunk.orig/apu-config.in
++++ trunk/apu-config.in
 @@ -27,7 +27,7 @@
  libdir="@libdir@"
  includedir="@includedir@"

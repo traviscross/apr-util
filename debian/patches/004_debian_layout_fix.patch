@@ -1,9 +1,10 @@
 From: <tfheen@debian.org>
 Subject: Fix the includedir in the Debian layout.
 
-diff -urNad apr-util-1.2.7~/config.layout apr-util-1.2.7/config.layout
---- apr-util-1.2.7~/config.layout	2005-02-09 13:18:43.000000000 +0100
-+++ apr-util-1.2.7/config.layout	2006-06-15 14:18:42.000000000 +0200
+Index: trunk/config.layout
+===================================================================
+--- trunk.orig/config.layout
++++ trunk/config.layout
 @@ -223,7 +223,7 @@
      libexecdir:    ${exec_prefix}/lib/apr/modules
      mandir:        ${exec_prefix}/share/man

@@ -1,8 +1,9 @@
 From: Stefan Fritsch <sf@debian.org>
 Subject: Make apu-config not output dbm libs by default. See #622081
 
-diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' trunk~/apu-config.in trunk/apu-config.in
---- trunk~/apu-config.in
+Index: trunk/apu-config.in
+===================================================================
+--- trunk.orig/apu-config.in
 +++ trunk/apu-config.in
 @@ -32,7 +32,8 @@
  LDFLAGS="@APRUTIL_LDFLAGS@"

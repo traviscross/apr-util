@@ -6,8 +6,10 @@ Subject: We don't need the bundled expat. This allows us to avoid a build-dep
  buildconf |    8 --------
  1 file changed, 8 deletions(-)
 
---- a/buildconf
-+++ b/buildconf
+Index: trunk/buildconf
+===================================================================
+--- trunk.orig/buildconf
++++ trunk/buildconf
 @@ -89,14 +89,6 @@
  echo "Generating 'make' outputs ..."
  $apr_src_dir/build/gen-build.py $verbose make

@@ -2,9 +2,10 @@ From: Ryan Niebur <ryanryan52@gmail.com>
 Subject: by default --avoid-ldap since apache2 is the only user, and we don't
  want to add extra dependencies to other apr-utils rdepends
 
-diff -urNad apr-util~/apu-config.in apr-util/apu-config.in
---- apr-util~/apu-config.in
-+++ apr-util/apu-config.in
+Index: trunk/apu-config.in
+===================================================================
+--- trunk.orig/apu-config.in
++++ trunk/apu-config.in
 @@ -30,7 +30,8 @@
  LIBS="@APRUTIL_EXPORT_LIBS@"
  INCLUDES="@APRUTIL_INCLUDES@"

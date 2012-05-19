@@ -6,8 +6,10 @@ Subject: Adjust LDFLAGS and INCLUDE
  configure.in |    3 +++
  1 file changed, 3 insertions(+)
 
---- a/configure.in
-+++ b/configure.in
+Index: trunk/configure.in
+===================================================================
+--- trunk.orig/configure.in
++++ trunk/configure.in
 @@ -213,6 +213,9 @@
  dnl
  APR_ADDTO(APRUTIL_LIBS, [$APR_LIBS])

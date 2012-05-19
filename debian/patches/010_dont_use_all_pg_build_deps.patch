@@ -1,9 +1,10 @@
 From: Ryan Niebur <RyanRyan52@gmail.com>
 Subject: Link directly to postgresql
 
-diff -urNad aprutil~/build/dbd.m4 aprutil/build/dbd.m4
---- aprutil~/build/dbd.m4	2008-12-26 13:40:37.000000000 -0800
-+++ aprutil/build/dbd.m4	2008-12-26 13:43:37.000000000 -0800
+Index: trunk/build/dbd.m4
+===================================================================
+--- trunk.orig/build/dbd.m4
++++ trunk/build/dbd.m4
 @@ -44,7 +44,7 @@
          AC_CHECK_LIB(pq, PQsendQueryPrepared, [apu_have_pgsql=1],[
          if test "x$PGSQL_CONFIG" != 'x'; then

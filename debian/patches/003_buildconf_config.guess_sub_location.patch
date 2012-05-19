@@ -5,8 +5,10 @@ Subject: Adjust path of config.guess and config.sub
  buildconf |    4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
---- a/buildconf
-+++ b/buildconf
+Index: trunk/buildconf
+===================================================================
+--- trunk.orig/buildconf
++++ trunk/buildconf
 @@ -61,8 +61,8 @@
  rm -f build/apr_common.m4 build/find_apr.m4 build/install.sh \
        build/config.guess build/config.sub build/get-version.sh

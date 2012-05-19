@@ -114,7 +114,7 @@ binary-arch: build install
 	dh_strip --dbg-package=libaprutil1-dbg
 	dh_compress
 	dh_fixperms
-	dh_makeshlibs -plibaprutil1
+	dh_makeshlibs -plibaprutil1 -X/apr-util-1/
 	dh_makeshlibs -n -Nlibaprutil1
 	dh_installdeb
 	dh_shlibdeps

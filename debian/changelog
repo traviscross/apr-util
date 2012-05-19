@@ -9,6 +9,7 @@ apr-util (1.4.1-2) UNRELEASED; urgency=low
   * Bump to debhelper 9.
   * Fix lintian warnings
     - use dh_prep
+    - omit driver libraries from symbol files
 
  -- Stefan Fritsch <sf@debian.org>  Sun, 06 May 2012 14:57:58 +0200
 

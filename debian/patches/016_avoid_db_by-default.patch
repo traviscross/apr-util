@@ -1,10 +1,6 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 016_avoid_db_by-default.dpatch by Stefan Fritsch <sf@debian.org>
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: #622081
+From: Stefan Fritsch <sf@debian.org>
+Subject: Make apu-config not output dbm libs by default. See #622081
 
-@DPATCH@
 diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' trunk~/apu-config.in trunk/apu-config.in
 --- trunk~/apu-config.in
 +++ trunk/apu-config.in

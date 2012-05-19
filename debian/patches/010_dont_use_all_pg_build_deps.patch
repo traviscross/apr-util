@@ -1,10 +1,6 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 010_dont_use_all_pg_build_deps.dpatch by Ryan Niebur <RyanRyan52@gmail.com>
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: No description.
+From: Ryan Niebur <RyanRyan52@gmail.com>
+Subject: Link directly to postgresql
 
-@DPATCH@
 diff -urNad aprutil~/build/dbd.m4 aprutil/build/dbd.m4
 --- aprutil~/build/dbd.m4	2008-12-26 13:40:37.000000000 -0800
 +++ aprutil/build/dbd.m4	2008-12-26 13:43:37.000000000 -0800

@@ -1,14 +1,13 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 003_buildconf_config.guess_sub_location.dpatch by  <tfheen@debian.org>
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: No description.
+From: Tollef Fog Heen <tfheen@debian.org>
+Subject: Adjust path of config.guess and config.sub
 
-@DPATCH@
-diff -urNad apr-util-1.2.7~/buildconf apr-util-1.2.7/buildconf
---- apr-util-1.2.7~/buildconf	2006-04-28 22:53:11.000000000 +0200
-+++ apr-util-1.2.7/buildconf	2006-04-28 22:55:02.000000000 +0200
-@@ -56,8 +56,8 @@
+---
+ buildconf |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+--- a/buildconf
++++ b/buildconf
+@@ -61,8 +61,8 @@
  rm -f build/apr_common.m4 build/find_apr.m4 build/install.sh \
        build/config.guess build/config.sub build/get-version.sh
  cp -p $apr_src_dir/build/apr_common.m4 $apr_src_dir/build/find_apr.m4 \

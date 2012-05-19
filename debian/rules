@@ -7,9 +7,6 @@ export DH_OPTIONS
 # for ppc64 on Ubuntu
 export DEB_GCC_NO_O3=1
 
-#enable dpatch
-include /usr/share/dpatch/dpatch.make
-
 # These are used for cross-compiling and for saving the configure script
 # # from having to guess our platform (since we know it already)
 DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
@@ -46,9 +43,9 @@ else
 endif
 
 ifeq ($(DEB_BUILD_ARCH),i386)
-        CONFFLAGS=apr_lock_method=USE_PROC_PTHREAD_SERIALIZE
+	CONFFLAGS=apr_lock_method=USE_PROC_PTHREAD_SERIALIZE
 else
-        CONFFLAGS=ac_cv_func_pthread_mutexattr_setpshared=no ac_cv_func_sem_open=no
+	CONFFLAGS=ac_cv_func_pthread_mutexattr_setpshared=no ac_cv_func_sem_open=no
 endif
 
 CONFFLAGS += ac_cv_prog_AWK=mawk
@@ -57,12 +54,12 @@ CONFFLAGS += ac_cv_ldap_set_rebind_proc_style=three
 
 SHELL=/bin/bash
 
-config.status: configure.in patch-stamp
+config.status: configure.in
 	dh_testdir
 	./buildconf --with-apr=$(shell apr-1-config --srcdir)
 	$(CONFFLAGS) ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --enable-layout=Debian --with-apr=/usr/bin/apr-1-config --with-ldap=yes --with-dbm=db --with-sqlite3 --with-pgsql=/usr --without-gdbm --without-sqlite2 --with-berkeley-db --with-mysql=/usr --with-freetds=/usr --with-odbc=/usr --with-openssl=/usr
 
-build: patch-stamp build-stamp
+build: build-stamp
 
 build-stamp: config.status
 	dh_testdir
@@ -75,7 +72,7 @@ build-stamp: config.status
 
 	touch $@
 
-clean: unpatch
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp test-stamp

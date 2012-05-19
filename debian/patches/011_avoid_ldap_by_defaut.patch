@@ -1,11 +1,7 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## avoid-ldap-by-default.dpatch by Ryan Niebur <ryanryan52@gmail.com>
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: by default --avoid-ldap since apache2 is the only user, and we
-## don't want to add extra dependencies to other apr-utils rdepends
+From: Ryan Niebur <ryanryan52@gmail.com>
+Subject: by default --avoid-ldap since apache2 is the only user, and we don't
+ want to add extra dependencies to other apr-utils rdepends
 
-@DPATCH@
 diff -urNad apr-util~/apu-config.in apr-util/apu-config.in
 --- apr-util~/apu-config.in
 +++ apr-util/apu-config.in

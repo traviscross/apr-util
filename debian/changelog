@@ -1,6 +1,7 @@
 apr-util (1.4.1-2) UNRELEASED; urgency=low
 
   * Remove obsolete version on binutils dependency. Closes: #666260
+  * Re-enable test suite on hurd. Closes: #550360
   * Switch VCS to git
 
  -- Stefan Fritsch <sf@debian.org>  Sun, 06 May 2012 14:57:58 +0200

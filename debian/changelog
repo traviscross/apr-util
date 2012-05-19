@@ -1,7 +1,7 @@
 apr-util (1.4.1-2) UNRELEASED; urgency=low
 
   * Remove obsolete version on binutils dependency. Closes: #666260
-  * Re-enable test suite on hurd. Closes: #550360
+  * Re-enable test suite on hurd. Closes: #657043
   * Switch VCS to git
   * Switch to packaging format "3.0 quilt", remove dpatch. Thanks to Jari
     Aalto for the patch. Closes: #664307

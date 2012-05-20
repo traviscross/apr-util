@@ -11,6 +11,7 @@ apr-util (1.4.1-2) UNRELEASED; urgency=low
   * Fix lintian warnings
     - use dh_prep
     - omit driver libraries from symbol files
+    - add build-arch and build-indep targets
 
  -- Stefan Fritsch <sf@debian.org>  Sun, 06 May 2012 14:57:58 +0200
 

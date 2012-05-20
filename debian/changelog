@@ -1,4 +1,4 @@
-apr-util (1.4.1-2) UNRELEASED; urgency=low
+apr-util (1.4.1-2) unstable; urgency=low
 
   * Remove obsolete version on binutils dependency. Closes: #666260
   * Re-enable test suite on hurd. Closes: #657043
@@ -13,7 +13,7 @@ apr-util (1.4.1-2) UNRELEASED; urgency=low
     - omit driver libraries from symbol files
     - add build-arch and build-indep targets
 
- -- Stefan Fritsch <sf@debian.org>  Sun, 06 May 2012 14:57:58 +0200
+ -- Stefan Fritsch <sf@debian.org>  Sun, 20 May 2012 22:14:38 +0200
 
 apr-util (1.4.1-1) unstable; urgency=low
 

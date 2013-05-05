@@ -1,6 +1,7 @@
 apr-util (1.5.2-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Ship find_apu.m4 in libaprutil1-dev. Closes: #699327
 
  -- Stefan Fritsch <sf@debian.org>  Sun, 05 May 2013 11:25:01 +0200
 

@@ -7,3 +7,4 @@ avoid_ldap_by_defaut.patch
 apu_config_dont_list_indep_libs.patch
 disable_expat_buildconf.patch
 avoid_db_by-default.patch
+test_verbose

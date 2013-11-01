@@ -1,3 +1,15 @@
+apr-util (1.5.2-2) UNRELEASED; urgency=low
+
+  * Remove dbd-freetds driver because it has security issues.
+  * Switch build system to dh.
+  * Bump Standards-Version (no additional changes).
+  * Support multi-arch.
+  * Adjust dependencies to a multi-arch enabled apr.
+  * Speed up build by not searching for lots of berkley db versions that
+    are not installed. Closes: #717327
+
+ -- Stefan Fritsch <sf@debian.org>  Fri, 01 Nov 2013 19:19:15 +0100
+
 apr-util (1.5.2-1) unstable; urgency=low
 
   * New upstream release.

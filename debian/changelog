@@ -1,3 +1,10 @@
+apr-util (1.5.2-3) UNRELEASED; urgency=low
+
+  * When querying the berkley db version, strip the epoch from the
+    version number.
+
+ -- Stefan Fritsch <sf@debian.org>  Fri, 08 Nov 2013 16:20:50 +0100
+
 apr-util (1.5.2-2) unstable; urgency=low
 
   * Remove dbd-freetds driver because it has security issues.

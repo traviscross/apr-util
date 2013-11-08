@@ -17,7 +17,7 @@ DEB_HOST_MULTIARCH  ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 # configure takes ages to test for all db versions. Provide the installed
 # version to speed things up.
 DB_VERSION = $(shell dpkg-query -W -f '$${Version}' libdb-dev | \
-	       perl -pe 's/^(\d+)[.](\d+)[.].*/$$1$$2/')
+	       perl -pe 's/^(?:[^:]*:)?(\d+)[.](\d+)[.].*/$$1$$2/')
 
 %:
 	dh $@ -B$(BUILDDIR) --parallel --with autotools_dev

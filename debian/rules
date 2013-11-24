@@ -19,7 +19,10 @@ DEB_HOST_MULTIARCH  ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 DB_VERSION = $(shell dpkg-query -W -f '$${Version}' libdb-dev | \
 	       perl -pe 's/^(?:[^:]*:)?(\d+)[.](\d+)[.].*/$$1$$2/')
 
-%:
+# The 'build' target needs special handling because there there is a directory
+# named 'build'.
+.PHONY: build
+build %:
 	dh $@ -B$(BUILDDIR) --parallel --with autotools_dev
 
 #

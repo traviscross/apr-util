@@ -49,7 +49,7 @@ CONFFLAGS := LTFLAGS=--no-silent \
 	     ac_cv_prog_AWK=mawk
 
 # files that are modified by buildconf and need to be restored during clean
-SAVE_FILES := configure
+SAVE_FILES := configure build/apr_common.m4
 
 ifeq ($(DEB_HOST_ARCH),i386)
 	CONFFLAGS += apr_lock_method=USE_PROC_PTHREAD_SERIALIZE
